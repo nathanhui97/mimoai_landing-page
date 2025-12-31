@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mimo.AI - Turn repetitive browser tasks into reusable, intelligent workflows. AI-powered Chrome Extension for browser automation.">
+    <title>Mimo.AI - Browser Automation Made Simple</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="logo.png" alt="Mimo.AI Logo" class="logo-image">
+                    <span class="logo-text">Mimo.AI</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#use-cases">Use Cases</a></li>
+                    <li><a href="#waitlist">Waitlist</a></li>
+                </ul>
+                <button class="btn-primary nav-cta" onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})">Join Waitlist</button>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Watch once.</span><br>Done forever.
+                </h1>
+                <p class="hero-supporting">
+                    Mimo learns your exact clicks and runs them reliably on any website.
+                </p>
+                
+                <!-- CTA Button -->
+                <div class="hero-cta">
+                    <button class="btn-primary btn-large" onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})">
+                        Try Mimo — It's Free
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Interactive Browser Demo -->
+            <div class="hero-visual-centered">
+                <div class="interactive-browser-demo">
+                    <!-- Browser Window Frame -->
+                    <div class="browser-window">
+                        <div class="browser-chrome">
+                            <div class="window-controls">
+                                <span class="control-dot red"></span>
+                                <span class="control-dot yellow"></span>
+                                <span class="control-dot green"></span>
+                            </div>
+                            <div class="address-bar">
+                                <span class="lock-icon">🔒</span>
+                                <span class="url-text">myapp.com/dashboard</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Abstract Webpage Content -->
+                        <div class="webpage-content">
+                            <!-- Animated Cursor -->
+                            <div class="demo-cursor"></div>
+                            
+                            <!-- Toast Notification -->
+                            <div class="demo-toast">
+                                <span class="toast-icon">✓</span>
+                                <span class="toast-text">Step 2 captured</span>
+                            </div>
+                            <!-- Default/Record Scenario: Simple Form -->
+                            <div class="scenario-content default-scenario active">
+                                <div class="scenario-title">Contact Form</div>
+                                <div class="page-element form-field browser-element" data-element="1">
+                                    <div class="field-label"></div>
+                                    <div class="field-input"></div>
+                                </div>
+                                <div class="page-element form-field browser-element" data-element="2">
+                                    <div class="field-label"></div>
+                                    <div class="field-input"></div>
+                                </div>
+                                <div class="page-element button-shape browser-element" data-element="3">
+                                    <div class="button-text"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Analyze Scenario: Multi-field Form -->
+                            <div class="scenario-content analyze-scenario">
+                                <div class="scenario-title">Client Intake</div>
+                                <div class="form-row">
+                                    <div class="page-element form-field browser-element small" data-element="1">
+                                        <div class="field-label"></div>
+                                        <div class="field-input"></div>
+                                    </div>
+                                    <div class="page-element form-field browser-element small" data-element="2">
+                                        <div class="field-label"></div>
+                                        <div class="field-input"></div>
+                                    </div>
+                                </div>
+                                <div class="page-element form-field browser-element" data-element="3">
+                                    <div class="field-label"></div>
+                                    <div class="field-input"></div>
+                                </div>
+                                <div class="page-element form-field browser-element" data-element="4">
+                                    <div class="field-label"></div>
+                                    <div class="field-input"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Execute Scenario: Data Entry -->
+                            <div class="scenario-content execute-scenario">
+                                <div class="scenario-title">Dashboard</div>
+                                <div class="page-element form-field browser-element" data-element="1">
+                                    <div class="field-label"></div>
+                                    <div class="field-input"></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="page-element form-field browser-element small" data-element="2">
+                                        <div class="field-label"></div>
+                                        <div class="field-input"></div>
+                                    </div>
+                                    <div class="page-element form-field browser-element small" data-element="3">
+                                        <div class="field-label"></div>
+                                        <div class="field-input"></div>
+                                    </div>
+                                </div>
+                                <div class="page-element button-shape browser-element" data-element="4">
+                                    <div class="button-text"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Extension Popup Overlay -->
+                        <div class="extension-popup">
+                            <div class="popup-header">
+                                <img src="logo.png" alt="Mimo.AI" class="popup-logo">
+                                <div class="popup-title-group">
+                                    <span class="popup-title">Mimo.AI</span>
+                                    <span class="popup-subtitle">I've got this 👋</span>
+                                </div>
+                            </div>
+                            <div class="popup-content">
+                                <div class="popup-state-simple active" data-step="1">
+                                    <div class="state-icon-large">👀</div>
+                                    <h4 class="state-title">Watching you work</h4>
+                                    <p class="state-subtitle">Recording this form...</p>
+                                    <div class="progress-dots">
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="popup-state-simple" data-step="2">
+                                    <div class="state-icon-large">🧠</div>
+                                    <h4 class="state-title">Learning the pattern</h4>
+                                    <p class="state-subtitle">AI detecting variables...</p>
+                                    <div class="progress-dots">
+                                        <span class="dot"></span>
+                                        <span class="dot active"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="popup-state-simple" data-step="3">
+                                    <div class="state-icon-large">🤖</div>
+                                    <h4 class="state-title">Running it perfectly</h4>
+                                    <p class="state-subtitle">Filling form automatically...</p>
+                                    <div class="progress-dots">
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot active"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How Mimo.AI Works</h2>
+                <p class="section-description">
+                    Three simple phases to automate any browser workflow
+                </p>
+            </div>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-visual record">
+                        <div class="step-icon">🎬</div>
+                        <div class="recording-pulse"></div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-badge">Phase 1</div>
+                        <h3 class="step-title">Record</h3>
+                        <p class="step-description">
+                            Click "Start Recording" and perform your task naturally. Mimo.AI captures 
+                            every click, input, and navigation—understanding the context and meaning 
+                            behind your actions.
+                        </p>
+                        <ul class="step-features">
+                            <li>✓ Captures semantic context automatically</li>
+                            <li>✓ Takes visual snapshots for AI understanding</li>
+                            <li>✓ Creates stable selectors with fallback options</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="workflow-step reverse">
+                    <div class="step-visual analyze">
+                        <div class="step-icon">🧠</div>
+                        <div class="analyzing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-badge">Phase 2</div>
+                        <h3 class="step-title">Analyze</h3>
+                        <p class="step-description">
+                            AI automatically analyzes your workflow, detects which values should be 
+                            variables (like "Acme Corp" → Client Name), and creates a dynamic form 
+                            schema with appropriate input types.
+                        </p>
+                        <ul class="step-features">
+                            <li>✓ AI-powered variable detection</li>
+                            <li>✓ Natural language step descriptions</li>
+                            <li>✓ Proactive selector validation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-visual execute">
+                        <div class="step-icon">⚡</div>
+                        <div class="execute-checkmarks">
+                            <span>✓</span>
+                            <span>✓</span>
+                            <span>✓</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-badge">Phase 3</div>
+                        <h3 class="step-title">Execute</h3>
+                        <p class="step-description">
+                            See your workflow as a clean, auto-generated form. Fill in new values and 
+                            click "Execute"—Mimo.AI handles navigation, form filling, and adapts to 
+                            UI changes automatically.
+                        </p>
+                        <ul class="step-features">
+                            <li>✓ 9 different element-finding strategies</li>
+                            <li>✓ AI-powered element recovery</li>
+                            <li>✓ Self-healing automation that adapts to changes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-description">
+                    Everything you need for intelligent browser automation
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">No Coding Required</h3>
+                    <p class="feature-description">
+                        Simply perform your task once. Mimo.AI watches, learns, and creates 
+                        reusable workflows automatically. Perfect for non-technical users.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Self-Healing Automation</h3>
+                    <p class="feature-description">
+                        Unlike traditional tools that break when websites update, Mimo.AI uses 
+                        AI to adapt to UI changes and find elements intelligently.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="feature-title">Smart Form Generation</h3>
+                    <p class="feature-description">
+                        Automatically detects variables in your workflow and creates beautiful, 
+                        dynamic forms with appropriate input types.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧭</div>
+                    <h3 class="feature-title">Semantic Understanding</h3>
+                    <p class="feature-description">
+                        Captures context like labels, placeholders, and surrounding text to 
+                        understand what each step means, not just what it does.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Visual AI Analysis</h3>
+                    <p class="feature-description">
+                        Takes visual snapshots during recording to help AI understand page 
+                        structure and improve element detection accuracy.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">Workflow Library</h3>
+                    <p class="feature-description">
+                        Save, organize, and reuse your automations. Build a library of 
+                        Micro-Apps for all your repetitive tasks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perfect For These Tasks</h2>
+                <p class="section-description">
+                    Automate any repetitive browser workflow in minutes
+                </p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">📋</div>
+                    <h3 class="use-case-title">Form Filling</h3>
+                    <p class="use-case-description">
+                        Stop filling out the same forms repeatedly. Record once, then use a 
+                        simple form to populate any similar form with different data.
+                    </p>
+                    <div class="use-case-example">
+                        Example: Client intake forms, job applications
+                    </div>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">🔄</div>
+                    <h3 class="use-case-title">Data Entry</h3>
+                    <p class="use-case-description">
+                        Enter data into spreadsheets, databases, or CRM systems with ease. 
+                        Mimo.AI handles multi-step processes automatically.
+                    </p>
+                    <div class="use-case-example">
+                        Example: Updating customer records, inventory management
+                    </div>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">🌐</div>
+                    <h3 class="use-case-title">Multi-Site Workflows</h3>
+                    <p class="use-case-description">
+                        Navigate through complex, multi-step processes across different 
+                        websites without losing your place or context.
+                    </p>
+                    <div class="use-case-example">
+                        Example: Research workflows, price comparisons
+                    </div>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">📊</div>
+                    <h3 class="use-case-title">Report Generation</h3>
+                    <p class="use-case-description">
+                        Create reports by navigating through multiple systems and collecting 
+                        data automatically—all with custom parameters.
+                    </p>
+                    <div class="use-case-example">
+                        Example: Weekly reports, analytics gathering
+                    </div>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">🛒</div>
+                    <h3 class="use-case-title">E-commerce Tasks</h3>
+                    <p class="use-case-description">
+                        Update product listings, process orders, or manage inventory across 
+                        multiple platforms with automated workflows.
+                    </p>
+                    <div class="use-case-example">
+                        Example: Product updates, order processing
+                    </div>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">✅</div>
+                    <h3 class="use-case-title">Testing & QA</h3>
+                    <p class="use-case-description">
+                        Test web applications with different data sets. Create test scenarios 
+                        that adapt to UI changes automatically.
+                    </p>
+                    <div class="use-case-example">
+                        Example: User flow testing, regression testing
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Solution Section -->
+    <section class="problem-solution">
+        <div class="container">
+            <div class="ps-content">
+                <div class="ps-text">
+                    <div class="ps-badge">The Problem</div>
+                    <h2 class="section-title">Traditional Automation Tools Fall Short</h2>
+                    <div class="problem-list">
+                        <div class="problem-item">
+                            <div class="problem-icon">❌</div>
+                            <div>
+                                <strong>Require Technical Knowledge</strong>
+                                <p>Most tools need coding skills or complex configurations</p>
+                            </div>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">❌</div>
+                            <div>
+                                <strong>Break When Sites Change</strong>
+                                <p>Brittle selectors fail when websites update their UI</p>
+                            </div>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon">❌</div>
+                            <div>
+                                <strong>Don't Understand Context</strong>
+                                <p>Can't adapt to variations or understand what actions mean</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ps-text">
+                    <div class="ps-badge solution">The Solution</div>
+                    <h2 class="section-title">Mimo.AI Changes Everything</h2>
+                    <div class="solution-list">
+                        <div class="solution-item">
+                            <div class="solution-icon">✓</div>
+                            <div>
+                                <strong>Zero Technical Skills Needed</strong>
+                                <p>Just show Mimo.AI what to do—no coding, no setup</p>
+                            </div>
+                        </div>
+                        <div class="solution-item">
+                            <div class="solution-icon">✓</div>
+                            <div>
+                                <strong>Self-Healing Automation</strong>
+                                <p>AI adapts to UI changes using 9 different recovery strategies</p>
+                            </div>
+                        </div>
+                        <div class="solution-item">
+                            <div class="solution-icon">✓</div>
+                            <div>
+                                <strong>Semantic Understanding</strong>
+                                <p>Understands meaning and context, not just DOM elements</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="waitlist-section">
+        <div class="container">
+            <div class="waitlist-content">
+                <div class="waitlist-header">
+                    <img src="logo.png" alt="Mimo.AI" class="waitlist-logo">
+                    <div class="waitlist-badge">
+                        <span class="badge-pulse"></span>
+                        <span>Launching Soon</span>
+                    </div>
+                    <h2 class="waitlist-title">Be First in Line</h2>
+                    <p class="waitlist-description">
+                        Mimo.AI is launching soon! Join our exclusive waitlist and be among the first to 
+                        experience browser automation that actually works. Plus, get early access perks!
+                    </p>
+                </div>
+                
+                <form class="waitlist-form" id="waitlistForm">
+                    <div class="form-row">
+                        <input 
+                            type="text" 
+                            id="waitlist-name" 
+                            name="name" 
+                            placeholder="Your name"
+                            required
+                        >
+                        <input 
+                            type="email" 
+                            id="waitlist-email" 
+                            name="email" 
+                            placeholder="Your email"
+                            required
+                        >
+                        <button type="submit" class="btn-primary btn-large">
+                            <span class="btn-icon">🚀</span>
+                            Join Waitlist
+                        </button>
+                    </div>
+                    <div id="waitlist-success" class="waitlist-success" style="display: none;">
+                        <span class="success-icon">✓</span>
+                        <p>Awesome! You're on the list. We'll notify you as soon as we launch! 🎉</p>
+                    </div>
+                    <div id="waitlist-error" class="waitlist-error" style="display: none;">
+                        <span class="error-icon">⚠️</span>
+                        <p>Oops! Something went wrong. Please try again.</p>
+                    </div>
+                </form>
+                
+                <div class="waitlist-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-text">
+                            <strong>Early Access</strong>
+                            <p>Get access before public launch</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🎁</div>
+                        <div class="benefit-text">
+                            <strong>Exclusive Perks</strong>
+                            <p>Special benefits for early adopters</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💬</div>
+                        <div class="benefit-text">
+                            <strong>Shape the Future</strong>
+                            <p>Influence features and development</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏆</div>
+                        <div class="benefit-text">
+                            <strong>Lifetime Discount</strong>
+                            <p>Lock in special pricing forever</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="waitlist-stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="waitlist-count">500+</div>
+                        <div class="stat-label">People Waiting</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">🗓️ Q1 2025</div>
+                        <div class="stat-label">Expected Launch</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Questions About Mimo.AI?</h2>
+                <p class="section-description">
+                    Get in touch with us before we launch
+                </p>
+            </div>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us what you'd like to automate..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h4>Email Us</h4>
+                        <p>support@mimo.ai</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">💬</div>
+                        <h4>Community</h4>
+                        <p>Join our Discord server</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📚</div>
+                        <h4>Documentation</h4>
+                        <p>Read our guides</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="logo.png" alt="Mimo.AI Logo" class="logo-image">
+                        <span class="logo-text">Mimo.AI</span>
+                    </div>
+                    <p class="footer-description">
+                        Monkey see, monkey do—browser automation powered by AI.
+                        Turn repetitive tasks into reusable Micro-Apps instantly.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#use-cases">Use Cases</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Video Tutorials</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#contact">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mimo.AI. All rights reserved.</p>
+                <p class="footer-tagline">Monkey see, monkey do—automation for everyone</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

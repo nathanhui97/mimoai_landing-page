@@ -1,0 +1,24 @@
+{
+  "name": "mimoai-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page for Mimo.AI - AI-Powered Browser Automation Chrome Extension",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000"
+  },
+  "keywords": [
+    "landing-page",
+    "ai",
+    "mimo.ai",
+    "browser-automation",
+    "chrome-extension",
+    "workflow-automation",
+    "no-code"
+  ],
+  "author": "Mimo.AI Team",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
+
