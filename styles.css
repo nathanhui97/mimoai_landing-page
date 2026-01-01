@@ -6404,21 +6404,19 @@ section {
         font-size: 0.6rem;
     }
 
-    /* Browser Demo - Scale down entire demo to fit mobile */
+    /* Browser Demo - Scale entire container as one unit */
     .hero-visual-centered {
         max-width: 100%;
         padding: 0.5rem 0 0;
-        overflow: visible;
+        overflow: hidden;
         display: flex;
         justify-content: center;
     }
     
     .interactive-browser-demo {
-        width: 125%;
-        max-width: 125%;
-        transform: scale(0.85);
+        transform: scale(0.70);
         transform-origin: top center;
-        margin-bottom: -40px;
+        margin: -50px 0 -120px 0;
     }
 
     .browser-window {
@@ -6426,119 +6424,12 @@ section {
         overflow: visible !important;
     }
     
-    /* Make extension popup sized for mobile */
+    /* Reset extension to desktop size - scaling handles reduction */
     .extension-popup {
-        width: 280px !important;
-        right: 6px !important;
-        padding: 0.6rem !important;
+        /* Desktop positioning and sizing - will scale with container */
     }
     
-    /* Reduce extension popup element sizes */
-    .extension-header {
-        padding: 0.4rem 0.5rem;
-    }
-    
-    .profile-circle {
-        width: 22px;
-        height: 22px;
-    }
-    
-    .profile-name {
-        font-size: 0.8rem;
-    }
-    
-    .create-workflow-btn {
-        padding: 0.5rem;
-        font-size: 0.75rem;
-        margin: 0.5rem 0;
-    }
-    
-    .workflow-card {
-        padding: 0.5rem;
-        gap: 0.4rem;
-        margin-bottom: 0.4rem;
-    }
-    
-    .workflow-icon {
-        font-size: 1.2rem;
-        width: 28px;
-        height: 28px;
-    }
-    
-    .workflow-name {
-        font-size: 0.75rem;
-    }
-    
-    .workflow-desc {
-        font-size: 0.65rem;
-    }
-    
-    .ai-working-banner {
-        padding: 0.5rem;
-        gap: 0.4rem;
-    }
-    
-    .ai-icon {
-        font-size: 1rem;
-    }
-    
-    .ai-label {
-        font-size: 0.75rem;
-    }
-    
-    .ai-sublabel {
-        font-size: 0.6rem;
-    }
-    
-    .checklist-item {
-        font-size: 0.7rem;
-        padding: 0.35rem 0.5rem;
-        gap: 0.4rem;
-    }
-    
-    /* Success state / label confirmation fixes for mobile */
-    .success-state {
-        padding: 0.5rem 0;
-    }
-    
-    .success-header {
-        padding: 0.6rem 0 0.5rem;
-        gap: 0.3rem;
-    }
-    
-    .success-icon-big {
-        font-size: 1.8rem;
-    }
-    
-    .success-title {
-        font-size: 0.9rem;
-    }
-    
-    .success-subtitle {
-        font-size: 0.7rem;
-    }
-    
-    .label-confirmation {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 1rem;
-    }
-    
-    .confirmation-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.25rem;
-    }
-    
-    .confirmation-title {
-        font-size: 0.9rem;
-    }
-    
-    .confirmation-text {
-        font-size: 0.7rem;
-    }
+    /* All element sizes stay desktop - scaling handles reduction */
     
     /* Hide cursor animation on mobile */
     .extension-cursor {
@@ -7180,36 +7071,8 @@ section {
     
     /* Scale down more on extra small phones */
     .interactive-browser-demo {
-        width: 140%;
-        max-width: 140%;
-        transform: scale(0.75);
-        margin-bottom: -60px;
-    }
-    
-    /* Extension sized for small phones */
-    .extension-popup {
-        width: 240px !important;
-        right: 4px !important;
-        padding: 0.5rem !important;
-    }
-    
-    .workflow-card {
-        padding: 0.4rem;
-    }
-    
-    .checklist-item {
-        font-size: 0.65rem;
-        padding: 0.3rem 0.4rem;
-    }
-    
-    /* Success state for small phones */
-    .success-icon-big {
-        font-size: 1.5rem;
-    }
-    
-    .confirmation-icon {
-        width: 40px;
-        height: 40px;
+        transform: scale(0.60);
+        margin: -70px 0 -140px 0;
     }
     
     .section-headline {
