@@ -30,7 +30,9 @@ Watch yourself perform a task once, and Mimo.AI creates an intelligent form inte
 
 ## 🚀 How It Works
 
-### 1. **Record** (The "Teach" Phase)
+### Step 1: **Record Your Task**
+
+Simply perform your task once while Mimo.AI watches and learns:
 
 - Click "Start Recording" in the extension sidepanel
 - Perform your task naturally in the browser:
@@ -45,13 +47,15 @@ Watch yourself perform a task once, and Mimo.AI creates an intelligent form inte
 - Generates stable selectors with multiple fallback options
 - Detects wait conditions automatically
 
-### 2. **Analyze** (The "Build" Phase)
+### Step 2: **AI Creates Your Micro-App**
 
-- AI automatically analyzes your recorded workflow
-- Detects which values should be variables (e.g., "Acme Corp" → Client Name field)
+Mimo.AI automatically analyzes and transforms your recording:
+
+- AI detects which values should be variables (e.g., "Acme Corp" → Client Name field)
 - Creates a dynamic form schema with appropriate input types
 - Translates steps into natural language descriptions
 - Validates and improves selectors proactively
+- Optimizes the workflow for reusability
 
 **What happens behind the scenes:**
 - Variable detection using AI vision analysis
@@ -60,12 +64,14 @@ Watch yourself perform a task once, and Mimo.AI creates an intelligent form inte
 - Navigation optimization (removes unnecessary steps)
 - Workflow intent analysis
 
-### 3. **Execute** (The "Run" Phase)
+### Step 3: **Run It Whenever You Need**
 
-- See your workflow in the library
+Execute your automation with new data in seconds:
+
+- Find your workflow in the library
 - Click to open a clean, dynamically generated form
 - Fill in new values for the detected variables
-- Click "Execute" to run the automation
+- Click "Execute" and watch the magic happen
 
 **What happens behind the scenes:**
 - Navigates to the starting URL
@@ -166,21 +172,21 @@ Test web applications with different data sets. Create test scenarios that adapt
 ### Workflow Components
 
 ```
-Recording Phase:
+Step 1 - Recording:
   ├── User Interaction Capture
   ├── Semantic Context Extraction
   ├── Visual Snapshot Generation
   ├── Selector Generation (with fallbacks)
   └── Wait Condition Detection
 
-Analysis Phase:
+Step 2 - Analysis:
   ├── AI Variable Detection
   ├── Form Schema Generation
   ├── Natural Language Translation
   ├── Selector Validation & Improvement
   └── Navigation Optimization
 
-Execution Phase:
+Step 3 - Execution:
   ├── URL Navigation
   ├── Multi-Strategy Element Finding
   ├── Dynamic Value Substitution

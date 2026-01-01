@@ -174,6 +174,99 @@ document.querySelectorAll('a[href="#waitlist"]').forEach(link => {
     });
 });
 
+// Waitlist Modal Functions
+function openWaitlistModal() {
+    const modal = document.getElementById('waitlistModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeWaitlistModal() {
+    const modal = document.getElementById('waitlistModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeWaitlistModal();
+    }
+});
+
+// Waitlist Signup Form Submission
+const waitlistSignupForm = document.getElementById('waitlistSignupForm');
+if (waitlistSignupForm) {
+    waitlistSignupForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const firstName = document.getElementById('first-name').value;
+        const lastName = document.getElementById('last-name').value;
+        const email = document.getElementById('email').value;
+        const useCase = document.getElementById('use-case').value;
+        
+        // Hide any previous messages
+        document.getElementById('waitlist-form-success').style.display = 'none';
+        document.getElementById('waitlist-form-error').style.display = 'none';
+        
+        // Disable button during submission
+        const submitBtn = waitlistSignupForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Adding you...';
+        
+        try {
+            // Here you would typically send the data to your backend/email service
+            console.log('Waitlist signup:', { firstName, lastName, email, useCase });
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // TODO: Replace with actual API call
+            // Example using fetch:
+            // const response = await fetch('YOUR_API_ENDPOINT', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ firstName, lastName, email, useCase })
+            // });
+            // if (!response.ok) throw new Error('Submission failed');
+            
+            // Show success message
+            document.getElementById('waitlist-form-success').style.display = 'flex';
+            
+            // Reset form
+            waitlistSignupForm.reset();
+            
+            // Optional: Track with analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'waitlist_signup', {
+                    'event_category': 'engagement',
+                    'event_label': email,
+                    'use_case': useCase
+                });
+            }
+            
+            // Close modal after 2 seconds
+            setTimeout(() => {
+                closeWaitlistModal();
+            }, 2000);
+            
+        } catch (error) {
+            console.error('Waitlist signup error:', error);
+            document.getElementById('waitlist-form-error').style.display = 'flex';
+        } finally {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        }
+    });
+}
+
 // Hero Animation: Saved Workflow → One-Click Run
 const initUnifiedStory = () => {
     const browserWindow = document.querySelector('.browser-window');
