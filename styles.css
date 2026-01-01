@@ -6404,19 +6404,22 @@ section {
         font-size: 0.6rem;
     }
 
-    /* Browser Demo - Scale entire container as one unit */
+    /* Browser Demo - Scale container while maintaining layout */
     .hero-visual-centered {
         max-width: 100%;
         padding: 0.5rem 0 0;
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
+        overflow: visible;
     }
     
     .interactive-browser-demo {
-        transform: scale(0.70);
+        width: 800px;
+        max-width: none;
+        transform: scale(0.85);
         transform-origin: top center;
-        margin: -50px 0 -120px 0;
+        margin: 0 auto -80px;
+        position: relative;
+        left: 50%;
+        margin-left: -400px;
     }
 
     .browser-window {
@@ -6424,9 +6427,9 @@ section {
         overflow: visible !important;
     }
     
-    /* Reset extension to desktop size - scaling handles reduction */
+    /* Extension popup maintains desktop position */
     .extension-popup {
-        /* Desktop positioning and sizing - will scale with container */
+        /* Desktop positioning preserved */
     }
     
     /* All element sizes stay desktop - scaling handles reduction */
@@ -7071,8 +7074,10 @@ section {
     
     /* Scale down more on extra small phones */
     .interactive-browser-demo {
-        transform: scale(0.60);
-        margin: -70px 0 -140px 0;
+        width: 800px;
+        transform: scale(0.75);
+        margin: 0 auto -100px;
+        margin-left: -400px;
     }
     
     .section-headline {
