@@ -6432,17 +6432,17 @@ section {
     }
     
     .browser-chrome {
-        padding: 0.35rem 0.5rem 0;
-        gap: 0.5rem;
+        padding: 0.2rem 0.35rem 0;
+        gap: 0.35rem;
     }
     
     .window-controls {
-        gap: 3px;
+        gap: 2px;
     }
     
     .control-dot {
-        width: 6px;
-        height: 6px;
+        width: 5px;
+        height: 5px;
     }
     
     .browser-tabs {
@@ -6457,14 +6457,14 @@ section {
     }
     
     .browser-tab {
-        padding: 0.25rem 0.4rem;
-        gap: 0.25rem;
+        padding: 0.15rem 0.3rem;
+        gap: 0.15rem;
         min-width: auto;
-        font-size: 0.65rem;
+        font-size: 0.55rem;
     }
     
     .tab-icon {
-        font-size: 0.7rem;
+        font-size: 0.55rem;
     }
     
     .browser-extensions {
@@ -6604,42 +6604,44 @@ section {
         font-size: 0.7rem;
     }
 
-    /* Extension Popup - Mobile Layout - Overlays Browser Content */
+    /* Extension Popup - Mobile Layout - Smaller overlay on right side */
     .extension-popup {
         position: absolute !important;
-        right: 8px !important;
-        left: 8px !important;
-        top: 60px !important;
-        bottom: 8px !important;
-        width: auto !important;
-        max-width: none !important;
+        right: 6px !important;
+        left: auto !important;
+        top: 55px !important;
+        bottom: auto !important;
+        width: 180px !important;
+        max-width: 55% !important;
         height: auto !important;
+        max-height: 200px !important;
         min-height: auto !important;
         transform: none !important;
-        padding: 0.5rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        padding: 0.4rem;
+        border-radius: 8px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
         z-index: 100;
         overflow-y: auto;
         background: white;
         border: 1px solid #e5e7eb;
+        font-size: 0.7rem;
     }
     
     .extension-header {
-        padding: 0.5rem;
+        padding: 0.25rem;
     }
     
     .header-profile {
-        gap: 0.4rem;
+        gap: 0.2rem;
     }
     
     .profile-circle {
-        width: 24px;
-        height: 24px;
+        width: 16px;
+        height: 16px;
     }
     
     .profile-name {
-        font-size: 0.85rem;
+        font-size: 0.65rem;
     }
     
     .settings-icon {
@@ -6647,10 +6649,10 @@ section {
     }
     
     .create-workflow-btn {
-        padding: 0.6rem;
-        font-size: 0.8rem;
-        gap: 0.4rem;
-        margin: 0.75rem 0;
+        padding: 0.3rem;
+        font-size: 0.6rem;
+        gap: 0.2rem;
+        margin: 0.3rem 0;
     }
     
     .workflows-header {
@@ -6667,23 +6669,24 @@ section {
     }
     
     .workflow-card {
-        padding: 0.75rem;
-        gap: 0.6rem;
-        margin-bottom: 0.6rem;
+        padding: 0.35rem;
+        gap: 0.25rem;
+        margin-bottom: 0.25rem;
     }
     
     .workflow-icon {
-        font-size: 1.25rem;
-        width: 32px;
-        height: 32px;
+        font-size: 0.8rem;
+        width: 20px;
+        height: 20px;
     }
     
     .workflow-name {
-        font-size: 0.85rem;
+        font-size: 0.6rem;
     }
     
     .workflow-desc {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
+        display: none;
     }
     
     .workflow-stats {
@@ -6696,30 +6699,31 @@ section {
     }
     
     .ai-working-banner {
-        padding: 0.75rem;
-        gap: 0.6rem;
+        padding: 0.35rem;
+        gap: 0.3rem;
     }
     
     .ai-icon {
-        font-size: 1.25rem;
+        font-size: 0.85rem;
     }
     
     .ai-label {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
     
     .ai-sublabel {
-        font-size: 0.65rem;
+        font-size: 0.5rem;
     }
     
     .execution-checklist {
-        gap: 0.6rem;
-        padding: 0.75rem 0;
+        gap: 0.2rem;
+        padding: 0.2rem 0;
     }
     
     .checklist-item {
-        font-size: 0.75rem;
-        gap: 0.5rem;
+        font-size: 0.55rem;
+        gap: 0.2rem;
+        padding: 0.2rem 0.3rem;
     }
     
     .success-header {
@@ -7394,11 +7398,15 @@ section {
     
     /* Extension Popup - Keep overlaid on 480px */
     .extension-popup {
-        right: 5px !important;
-        left: 5px !important;
-        top: 50px !important;
-        bottom: 5px !important;
-        padding: 0.4rem;
+        right: 4px !important;
+        left: auto !important;
+        top: 45px !important;
+        bottom: auto !important;
+        width: 160px !important;
+        max-width: 50% !important;
+        max-height: 180px !important;
+        padding: 0.3rem;
+        font-size: 0.6rem;
     }
     
     /* Fix tab-content for extra small screens */
