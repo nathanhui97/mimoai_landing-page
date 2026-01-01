@@ -6432,26 +6432,30 @@ section {
         width: 280px !important;
     }
     
-    /* Fix browser tab content to fill full width and center properly */
+    /* Center browser tab content in space not covered by extension */
     .tab-content {
         left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        padding: 1rem !important;
+        right: 290px !important;
+        width: auto !important;
+        padding: 1rem 0.5rem !important;
         box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
     }
     
     .webpage-content {
         position: relative;
         width: 100%;
-        padding: 1.5rem 1rem;
+        max-width: 100%;
+        padding: 1.5rem 0.5rem;
     }
     
     .order-view,
     .spreadsheet-view,
     .shipping-view {
         width: 100%;
-        max-width: 100%;
+        max-width: 450px;
         margin: 0 auto;
     }
     
@@ -6506,6 +6510,10 @@ section {
         .extension-popup {
             width: 260px !important;
         }
+        
+        .tab-content {
+            right: 270px !important;
+        }
     }
     
     @media (max-width: 360px) {
@@ -6516,6 +6524,10 @@ section {
         
         .extension-popup {
             width: 240px !important;
+        }
+        
+        .tab-content {
+            right: 250px !important;
         }
         
         .confirmation-icon {
@@ -7175,11 +7187,12 @@ section {
     }
     
     .tab-content {
-        padding: 0.75rem !important;
+        right: 260px !important;
+        padding: 0.75rem 0.5rem !important;
     }
     
     .webpage-content {
-        padding: 1rem 0.75rem;
+        padding: 1rem 0.5rem;
     }
     
     .section-headline {
