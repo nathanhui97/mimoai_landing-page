@@ -6408,13 +6408,21 @@ section {
         padding: 1rem 0;
         overflow: hidden;
     }
+    
+    .interactive-browser-demo {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
 
     .browser-window {
         width: 100%;
         max-width: 100%;
         border-radius: 8px;
-        transform: scale(0.95);
+        transform: none;
         transform-origin: top center;
+        margin: 0;
+        box-sizing: border-box;
     }
     
     .browser-chrome {
@@ -6481,6 +6489,26 @@ section {
         padding: 1.5rem 1rem;
         min-height: 280px;
         font-size: 0.8rem;
+    }
+    
+    /* Fix tab-content for mobile - full width since extension popup is below */
+    .tab-content {
+        right: 0 !important;
+        left: 0 !important;
+        padding: 1rem 0.75rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Ensure browser window content doesn't overflow */
+    .browser-window {
+        overflow: hidden;
+    }
+    
+    .webpage-content {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     /* Order Tab */
@@ -6588,10 +6616,11 @@ section {
         margin: 1.5rem auto 0;
         width: 92%;
         max-width: 340px;
-        transform: none;
+        transform: none !important;
         min-height: 260px;
         padding: 0.75rem;
         border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     }
     
     .extension-header {
@@ -7331,7 +7360,13 @@ section {
     }
     
     .browser-window {
-        transform: scale(0.9);
+        transform: none;
+    }
+    
+    /* Fix tab-content for extra small screens */
+    .tab-content {
+        right: 0 !important;
+        padding: 0.75rem 0.5rem;
     }
     
     .extension-popup {
