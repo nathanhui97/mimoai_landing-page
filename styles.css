@@ -6414,7 +6414,8 @@ section {
     .interactive-browser-demo {
         width: 100%;
         max-width: 100%;
-        overflow: hidden;
+        overflow: visible;
+        position: relative;
     }
 
     .browser-window {
@@ -6423,7 +6424,7 @@ section {
         border-radius: 6px;
         transform: scale(0.75);
         transform-origin: top center;
-        margin: 0 0 -3rem 0;
+        margin: 0 0 -1rem 0;
         box-sizing: border-box;
     }
     
@@ -6609,20 +6610,21 @@ section {
         font-size: 0.7rem;
     }
 
-    /* Extension Popup - Mobile Layout */
+    /* Extension Popup - Mobile Layout - Integrated with Browser */
     .extension-popup {
         position: relative;
         right: auto;
         top: auto;
         bottom: auto;
-        margin: 1rem auto 0;
+        margin: -1.5rem auto 0;
         width: 90%;
         max-width: 320px;
         transform: none !important;
         min-height: 220px;
         padding: 0.6rem;
         border-radius: 8px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        z-index: 10;
     }
     
     .extension-header {
@@ -7383,7 +7385,7 @@ section {
     
     .browser-window {
         transform: scale(0.65);
-        margin-bottom: -4rem;
+        margin-bottom: -0.5rem;
     }
     
     .webpage-content {
@@ -7395,7 +7397,7 @@ section {
         width: 95%;
         padding: 0.5rem;
         min-height: 200px;
-        margin: 0.75rem auto 0;
+        margin: -1rem auto 0;
     }
     
     /* Fix tab-content for extra small screens */
