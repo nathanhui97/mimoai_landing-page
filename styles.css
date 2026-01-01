@@ -6404,7 +6404,7 @@ section {
         font-size: 0.6rem;
     }
 
-    /* Browser Demo - Critical Mobile Fixes */
+    /* Browser Demo - Scale down entire demo to fit mobile */
     .hero-visual-centered {
         max-width: 100%;
         padding: 0.5rem 0 0;
@@ -6412,344 +6412,30 @@ section {
     }
     
     .interactive-browser-demo {
-        width: 100%;
-        max-width: 100%;
-        overflow: visible;
-        position: relative;
+        width: 130%;
+        max-width: 130%;
+        transform: scale(0.75);
+        transform-origin: top left;
+        margin-left: -2%;
+        margin-bottom: -80px;
     }
 
     .browser-window {
-        width: 100%;
-        max-width: 100%;
-        border-radius: 8px;
-        transform: none;
-        transform-origin: top center;
-        margin: 0;
-        box-sizing: border-box;
-        min-height: 340px;
         position: relative !important;
         overflow: visible !important;
     }
     
-    .browser-chrome {
-        padding: 0.2rem 0.35rem 0;
-        gap: 0.35rem;
-    }
+    /* Browser chrome - keep desktop sizes, scaling handles reduction */
     
-    .window-controls {
-        gap: 2px;
-    }
-    
-    .control-dot {
-        width: 5px;
-        height: 5px;
-    }
-    
-    .browser-tabs {
-        gap: 3px;
-        overflow-x: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-    
-    .browser-tabs::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .browser-tab {
-        padding: 0.15rem 0.3rem;
-        gap: 0.15rem;
-        min-width: auto;
-        font-size: 0.55rem;
-    }
-    
-    .tab-icon {
-        font-size: 0.55rem;
-    }
-    
-    .browser-extensions {
-        gap: 3px;
-    }
-    
-    .extension-icon {
-        width: 18px;
-        height: 18px;
-    }
-    
-    .address-bar-row {
-        padding: 0.4rem 0.5rem;
-    }
-    
-    .address-bar {
-        padding: 0.35rem 0.6rem;
-        font-size: 0.65rem;
-        gap: 0.35rem;
-    }
-    
-    .lock-icon {
-        font-size: 0.65rem;
-    }
+    /* Browser tabs/address bar - keep desktop sizes, scaling handles reduction */
 
-    /* Webpage Content Scaling - Reduced height for extension overlay */
-    .webpage-content {
-        padding: 0.75rem 0.5rem;
-        min-height: 120px;
-        max-height: 140px;
-        font-size: 0.7rem;
-        overflow: hidden;
-    }
+    /* Webpage content - keep desktop sizes, scaling handles reduction */
     
-    /* Fix tab-content for mobile */
-    .tab-content {
-        right: 0 !important;
-        left: 0 !important;
-        padding: 0.5rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
+    /* Browser demo content - desktop sizes preserved, scaling handles reduction */
     
-    /* Order Tab */
-    .order-view {
-        gap: 0.75rem;
-    }
-    
-    .order-header {
-        padding: 0.5rem;
-        gap: 0.5rem;
-        font-size: 0.7rem;
-    }
-    
-    .order-number {
-        font-size: 0.75rem;
-    }
-    
-    .order-status {
-        font-size: 0.65rem;
-        padding: 0.2rem 0.5rem;
-    }
-    
-    .order-details {
-        gap: 0.5rem;
-    }
-    
-    .detail-row {
-        padding: 0.6rem;
-        gap: 0.6rem;
-        font-size: 0.75rem;
-    }
-    
-    /* Spreadsheet */
-    .spreadsheet-toolbar {
-        padding: 0.5rem;
-        font-size: 0.7rem;
-    }
-    
-    .spreadsheet-row {
-        grid-template-columns: 30px 1fr 1fr 70px;
-        font-size: 0.7rem;
-    }
-    
-    .cell {
-        padding: 0.4rem 0.3rem;
-    }
-    
-    .cell-num {
-        font-size: 0.65rem;
-    }
-    
-    /* Shipping Form */
-    .shipping-header {
-        padding: 0.6rem;
-        gap: 0.4rem;
-        font-size: 0.7rem;
-    }
-    
-    .shipping-form {
-        gap: 0.75rem;
-    }
-    
-    .shipping-field {
-        gap: 0.35rem;
-    }
-    
-    .field-label {
-        font-size: 0.7rem;
-    }
-    
-    .field-box {
-        padding: 0.6rem;
-        font-size: 0.75rem;
-    }
-    
-    .btn-create-label {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-    }
-    
-    .label-confirmation {
-        padding: 1.25rem;
-    }
-    
-    .confirmation-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1.25rem;
-    }
-    
-    .confirmation-title {
-        font-size: 1rem;
-    }
-    
-    .confirmation-text {
-        font-size: 0.7rem;
-    }
-
-    /* Extension Popup - Mobile Layout - Smaller overlay on right side */
-    .extension-popup {
-        position: absolute !important;
-        right: 6px !important;
-        left: auto !important;
-        top: 55px !important;
-        bottom: auto !important;
-        width: 180px !important;
-        max-width: 55% !important;
-        height: auto !important;
-        max-height: 200px !important;
-        min-height: auto !important;
-        transform: none !important;
-        padding: 0.4rem;
-        border-radius: 8px;
-        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
-        z-index: 100;
-        overflow-y: auto;
-        background: white;
-        border: 1px solid #e5e7eb;
-        font-size: 0.7rem;
-    }
-    
-    .extension-header {
-        padding: 0.25rem;
-    }
-    
-    .header-profile {
-        gap: 0.2rem;
-    }
-    
-    .profile-circle {
-        width: 16px;
-        height: 16px;
-    }
-    
-    .profile-name {
-        font-size: 0.65rem;
-    }
-    
-    .settings-icon {
-        font-size: 0.9rem;
-    }
-    
-    .create-workflow-btn {
-        padding: 0.3rem;
-        font-size: 0.6rem;
-        gap: 0.2rem;
-        margin: 0.3rem 0;
-    }
-    
-    .workflows-header {
-        padding: 0.5rem 0;
-        margin-bottom: 0.5rem;
-    }
-    
-    .workflows-title {
-        font-size: 0.85rem;
-    }
-    
-    .workflows-count {
-        font-size: 0.7rem;
-    }
-    
-    .workflow-card {
-        padding: 0.35rem;
-        gap: 0.25rem;
-        margin-bottom: 0.25rem;
-    }
-    
-    .workflow-icon {
-        font-size: 0.8rem;
-        width: 20px;
-        height: 20px;
-    }
-    
-    .workflow-name {
-        font-size: 0.6rem;
-    }
-    
-    .workflow-desc {
-        font-size: 0.5rem;
-        display: none;
-    }
-    
-    .workflow-stats {
-        font-size: 0.65rem;
-    }
-    
-    .play-btn {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.7rem;
-    }
-    
-    .ai-working-banner {
-        padding: 0.35rem;
-        gap: 0.3rem;
-    }
-    
-    .ai-icon {
-        font-size: 0.85rem;
-    }
-    
-    .ai-label {
-        font-size: 0.6rem;
-    }
-    
-    .ai-sublabel {
-        font-size: 0.5rem;
-    }
-    
-    .execution-checklist {
-        gap: 0.2rem;
-        padding: 0.2rem 0;
-    }
-    
-    .checklist-item {
-        font-size: 0.55rem;
-        gap: 0.2rem;
-        padding: 0.2rem 0.3rem;
-    }
-    
-    .success-header {
-        padding: 1.25rem;
-    }
-    
-    .success-icon-big {
-        font-size: 2.5rem;
-    }
-    
-    .success-title {
-        font-size: 1.1rem;
-    }
-    
-    .success-subtitle {
-        font-size: 0.8rem;
-    }
-    
+    /* Hide cursor animation on mobile */
     .extension-cursor {
         display: none;
-    }
-    
-    .scenario-content {
-        top: 1.5rem;
-        left: 1rem;
-        right: 1rem;
     }
 
     /* How It Works Section */
@@ -7385,34 +7071,10 @@ section {
         padding: 0.25rem 0 0;
     }
     
-    .browser-window {
-        transform: none;
-        margin: 0;
-        min-height: 350px;
-    }
-    
-    .webpage-content {
-        padding: 0.5rem 0.4rem;
-        min-height: 100px;
-    }
-    
-    /* Extension Popup - Keep overlaid on 480px */
-    .extension-popup {
-        right: 4px !important;
-        left: auto !important;
-        top: 45px !important;
-        bottom: auto !important;
-        width: 160px !important;
-        max-width: 50% !important;
-        max-height: 180px !important;
-        padding: 0.3rem;
-        font-size: 0.6rem;
-    }
-    
-    /* Fix tab-content for extra small screens */
-    .tab-content {
-        right: 0 !important;
-        padding: 0.75rem 0.5rem;
+    /* Scale down more on extra small phones */
+    .interactive-browser-demo {
+        transform: scale(0.65);
+        margin-bottom: -100px;
     }
     
     .section-headline {
