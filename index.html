@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -41,18 +41,20 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="gradient-text">Watch once.</span><br>Done forever.
+                    <span class="hero-line-1"><span class="gradient-text">Eliminate</span> any repetitive work</span><br>
+                    <span class="hero-line-2">you do in the browser.</span>
                 </h1>
                 <p class="hero-supporting">
-                    Mimo learns your exact clicks and runs them reliably on any website.
+                    Train Mimo like a new hire, and delegate all your tedious browser work.
                 </p>
-                
-                <!-- CTA Button -->
-                <div class="hero-cta">
-                    <button class="btn-primary btn-large" onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})">
-                        Try Mimo — It's Free
-                    </button>
-                </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="hero-cta">
+                <button class="btn-hero-cta" onclick="document.getElementById('waitlist').scrollIntoView({behavior: 'smooth'})">
+                    <span class="cta-text">Join Waitlist</span>
+                    <span class="cta-subtext">Get 3 months free as an early adopter</span>
+                </button>
             </div>
             
             <!-- Interactive Browser Demo -->
@@ -66,130 +68,265 @@
                                 <span class="control-dot yellow"></span>
                                 <span class="control-dot green"></span>
                             </div>
+                            <div class="browser-tabs">
+                                <div class="browser-tab active" data-tab="order">
+                                    <span class="tab-icon">🛒</span>
+                                    <span class="tab-title">Customer Order</span>
+                                </div>
+                                <div class="browser-tab" data-tab="sheets">
+                                    <span class="tab-icon">📊</span>
+                                    <span class="tab-title">Order Tracking</span>
+                                </div>
+                                <div class="browser-tab" data-tab="shipping">
+                                    <span class="tab-icon">📦</span>
+                                    <span class="tab-title">Ship Order</span>
+                                </div>
+                            </div>
+                            <div class="browser-extensions">
+                                <div class="extension-icon active">
+                                    <img src="logo.png" alt="Mimo.AI" class="ext-icon-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="address-bar-row">
                             <div class="address-bar">
                                 <span class="lock-icon">🔒</span>
-                                <span class="url-text">myapp.com/dashboard</span>
+                                <span class="url-text">shop.company.com/orders/view/12847</span>
                             </div>
                         </div>
                         
-                        <!-- Abstract Webpage Content -->
+                        <!-- Tab Content -->
                         <div class="webpage-content">
-                            <!-- Animated Cursor -->
-                            <div class="demo-cursor"></div>
-                            
-                            <!-- Toast Notification -->
-                            <div class="demo-toast">
-                                <span class="toast-icon">✓</span>
-                                <span class="toast-text">Step 2 captured</span>
-                            </div>
-                            <!-- Default/Record Scenario: Simple Form -->
-                            <div class="scenario-content default-scenario active">
-                                <div class="scenario-title">Contact Form</div>
-                                <div class="page-element form-field browser-element" data-element="1">
-                                    <div class="field-label"></div>
-                                    <div class="field-input"></div>
-                                </div>
-                                <div class="page-element form-field browser-element" data-element="2">
-                                    <div class="field-label"></div>
-                                    <div class="field-input"></div>
-                                </div>
-                                <div class="page-element button-shape browser-element" data-element="3">
-                                    <div class="button-text"></div>
-                                </div>
-                            </div>
-                            
-                            <!-- Analyze Scenario: Multi-field Form -->
-                            <div class="scenario-content analyze-scenario">
-                                <div class="scenario-title">Client Intake</div>
-                                <div class="form-row">
-                                    <div class="page-element form-field browser-element small" data-element="1">
-                                        <div class="field-label"></div>
-                                        <div class="field-input"></div>
+                            <!-- Tab 1: Customer Order Page (Simplified) -->
+                            <div class="tab-content order-tab active" data-tab="order">
+                                <div class="order-view">
+                                    <div class="order-header">
+                                        <span class="order-number">Order #12847</span>
+                                        <span class="order-status">✅ Confirmed</span>
                                     </div>
-                                    <div class="page-element form-field browser-element small" data-element="2">
-                                        <div class="field-label"></div>
-                                        <div class="field-input"></div>
+                                    <div class="order-details">
+                                        <div class="detail-row highlight-row" data-order-row="1">
+                                            <span class="detail-label">Customer:</span>
+                                            <span class="detail-value" data-field="customer">Sarah Mitchell</span>
+                                        </div>
+                                        <div class="detail-row highlight-row" data-order-row="1">
+                                            <span class="detail-label">Product:</span>
+                                            <span class="detail-value" data-field="product">Wireless Headphones × 2</span>
+                                        </div>
+                                        <div class="detail-row total-row">
+                                            <span class="detail-label">Total:</span>
+                                            <span class="detail-value">$299.98</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="page-element form-field browser-element" data-element="3">
-                                    <div class="field-label"></div>
-                                    <div class="field-input"></div>
-                                </div>
-                                <div class="page-element form-field browser-element" data-element="4">
-                                    <div class="field-label"></div>
-                                    <div class="field-input"></div>
                                 </div>
                             </div>
                             
-                            <!-- Execute Scenario: Data Entry -->
-                            <div class="scenario-content execute-scenario">
-                                <div class="scenario-title">Dashboard</div>
-                                <div class="page-element form-field browser-element" data-element="1">
-                                    <div class="field-label"></div>
-                                    <div class="field-input"></div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="page-element form-field browser-element small" data-element="2">
-                                        <div class="field-label"></div>
-                                        <div class="field-input"></div>
+                            <!-- Tab 2: Order Tracking Spreadsheet (Simplified) -->
+                            <div class="tab-content sheets-tab" data-tab="sheets">
+                                <div class="spreadsheet-view">
+                                    <div class="spreadsheet-toolbar">
+                                        <span class="toolbar-title">📊 Order Tracking</span>
                                     </div>
-                                    <div class="page-element form-field browser-element small" data-element="3">
-                                        <div class="field-label"></div>
-                                        <div class="field-input"></div>
+                                    <div class="spreadsheet-data simplified">
+                                        <div class="spreadsheet-row header-row">
+                                            <div class="cell cell-num">#</div>
+                                            <div class="cell">Customer</div>
+                                            <div class="cell">Product</div>
+                                            <div class="cell">Total</div>
+                                        </div>
+                                        <div class="spreadsheet-row data-row empty-row" data-row="1">
+                                            <div class="cell cell-num">1</div>
+                                            <div class="cell" data-col="customer"></div>
+                                            <div class="cell" data-col="product"></div>
+                                            <div class="cell" data-col="total"></div>
+                                        </div>
+                                        <div class="spreadsheet-row data-row faded">
+                                            <div class="cell cell-num">2</div>
+                                            <div class="cell">John Davis</div>
+                                            <div class="cell">USB-C Hub</div>
+                                            <div class="cell">$249.95</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="page-element button-shape browser-element" data-element="4">
-                                    <div class="button-text"></div>
+                            </div>
+                            
+                            <!-- Tab 3: Shipping Label (Simplified) -->
+                            <div class="tab-content shipping-tab" data-tab="shipping">
+                                <div class="shipping-view">
+                                    <div class="shipping-header">
+                                        <span class="shipping-title">Create Shipping Label</span>
+                                        <span class="order-ref">Order #12847</span>
+                                    </div>
+                                    <div class="shipping-form">
+                                        <div class="shipping-field">
+                                            <span class="field-label">Recipient</span>
+                                            <div class="field-box" data-field="ship-name">
+                                                <span class="field-text"></span>
+                                            </div>
+                                        </div>
+                                        <div class="shipping-field">
+                                            <span class="field-label">Address</span>
+                                            <div class="field-box" data-field="ship-address">
+                                                <span class="field-text"></span>
+                                            </div>
+                                        </div>
+                                        <div class="shipping-actions">
+                                            <button class="btn-create-label">Create Label</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Label Created Confirmation -->
+                                    <div class="label-confirmation">
+                                        <div class="confirmation-icon">✓</div>
+                                        <h3 class="confirmation-title">Label Created!</h3>
+                                        <p class="confirmation-text">Tracking #: 1Z999AA10123456784</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Extension Popup Overlay -->
+                        
+                        <!-- Extension Popup - Inside Browser -->
                         <div class="extension-popup">
-                            <div class="popup-header">
-                                <img src="logo.png" alt="Mimo.AI" class="popup-logo">
-                                <div class="popup-title-group">
-                                    <span class="popup-title">Mimo.AI</span>
-                                    <span class="popup-subtitle">I've got this 👋</span>
+                            <!-- State 1: Saved Workflow Ready -->
+                            <div class="extension-state workflow-ready-state active" data-step="1">
+                                <div class="extension-header">
+                                    <div class="header-profile">
+                                        <div class="profile-circle">
+                                            <img src="logo.png" alt="Mimo" class="profile-icon">
+                                        </div>
+                                        <span class="profile-name">Mimo</span>
+                                    </div>
+                                    <button class="settings-btn" title="Settings">
+                                        <span class="settings-icon">⚙️</span>
+                                    </button>
+                                </div>
+                                
+                                <button class="create-workflow-btn">
+                                    <span class="create-icon">+</span>
+                                    <span>Create Workflow</span>
+                                </button>
+                                
+                                <div class="workflows-header">
+                                    <h3 class="workflows-title">My Workflows</h3>
+                                    <span class="workflows-count">3 saved</span>
+                                </div>
+                                
+                                <!-- Workflow 1: Invoice Processing -->
+                                <div class="workflow-card">
+                                    <div class="workflow-icon">📄</div>
+                                    <div class="workflow-info">
+                                        <div class="workflow-name-row">
+                                            <h3 class="workflow-name">Invoice Processing</h3>
+                                            <button class="play-btn" title="Run workflow">Start</button>
+                                        </div>
+                                        <p class="workflow-desc">Extracts data from invoices to accounting software</p>
+                                        <span class="workflow-stats">Last run: 5 days ago • <strong>23 runs</strong></span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Workflow 2: Order Fulfillment -->
+                                <div class="workflow-card">
+                                    <div class="workflow-icon">📦</div>
+                                    <div class="workflow-info">
+                                        <div class="workflow-name-row">
+                                            <h3 class="workflow-name">Order Fulfillment</h3>
+                                            <button class="play-btn" title="Run workflow">Start</button>
+                                        </div>
+                                        <p class="workflow-desc">Logs orders and creates shipping labels</p>
+                                        <span class="workflow-stats">Last run: 2 days ago • <strong>47 runs</strong></span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Workflow 3: Customer Onboarding -->
+                                <div class="workflow-card">
+                                    <div class="workflow-icon">👤</div>
+                                    <div class="workflow-info">
+                                        <div class="workflow-name-row">
+                                            <h3 class="workflow-name">Customer Onboarding</h3>
+                                            <button class="play-btn" title="Run workflow">Start</button>
+                                        </div>
+                                        <p class="workflow-desc">Creates accounts and sends welcome emails</p>
+                                        <span class="workflow-stats">Last run: 1 week ago • <strong>12 runs</strong></span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="popup-content">
-                                <div class="popup-state-simple active" data-step="1">
-                                    <div class="state-icon-large">👀</div>
-                                    <h4 class="state-title">Watching you work</h4>
-                                    <p class="state-subtitle">Recording this form...</p>
-                                    <div class="progress-dots">
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
+                            
+                            <!-- State 2: Starting -->
+                            <div class="extension-state starting-state" data-step="2">
+                                <div class="workflow-card">
+                                    <div class="workflow-icon">📦</div>
+                                    <div class="workflow-info">
+                                        <h3 class="workflow-name">Order Fulfillment</h3>
+                                        <p class="workflow-desc">Logs orders and creates shipping labels automatically</p>
                                     </div>
                                 </div>
-                                <div class="popup-state-simple" data-step="2">
-                                    <div class="state-icon-large">🧠</div>
-                                    <h4 class="state-title">Learning the pattern</h4>
-                                    <p class="state-subtitle">AI detecting variables...</p>
-                                    <div class="progress-dots">
-                                        <span class="dot"></span>
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
+                                <button class="starting-btn">
+                                    <span class="spinner"></span>
+                                    <span>Starting...</span>
+                                </button>
+                            </div>
+                            
+                            <!-- State 3: Executing -->
+                            <div class="extension-state executing-state" data-step="3">
+                                <!-- Mimo Working Indicator -->
+                                <div class="ai-working-banner">
+                                    <div class="ai-icon-wrapper">
+                                        <span class="ai-icon">🐵</span>
+                                        <div class="ai-pulse"></div>
+                                    </div>
+                                    <div class="ai-text">
+                                        <div class="ai-label">Mimo is working</div>
+                                        <div class="ai-sublabel">Automating your workflow</div>
                                     </div>
                                 </div>
-                                <div class="popup-state-simple" data-step="3">
-                                    <div class="state-icon-large">🤖</div>
-                                    <h4 class="state-title">Running it perfectly</h4>
-                                    <p class="state-subtitle">Filling form automatically...</p>
-                                    <div class="progress-dots">
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot active"></span>
+                                
+                                <div class="workflow-card executing">
+                                    <div class="workflow-icon">📦</div>
+                                    <div class="workflow-info">
+                                        <h3 class="workflow-name">Order Fulfillment</h3>
+                                        <span class="running-badge">⚡ RUNNING</span>
                                     </div>
                                 </div>
+                                <div class="execution-checklist">
+                                    <div class="checklist-item" data-step="open">
+                                        <span class="item-check">○</span>
+                                        <span class="item-text">Reading order details...</span>
+                                    </div>
+                                    <div class="checklist-item" data-step="read">
+                                        <span class="item-check">○</span>
+                                        <span class="item-text">Logging to spreadsheet...</span>
+                                    </div>
+                                    <div class="checklist-item" data-step="add">
+                                        <span class="item-check">○</span>
+                                        <span class="item-text">Creating shipping label...</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- State 4: Success -->
+                            <div class="extension-state complete-state" data-step="4">
+                                <div class="success-header">
+                                    <span class="success-icon-big">🐵</span>
+                                    <h3 class="success-title">Mimo completed it!</h3>
+                                    <p class="success-subtitle">Saved 5 minutes</p>
+                                </div>
+                                <button class="success-run-again-btn">
+                                    <span class="btn-play">▶</span>
+                                    <span>Run Again</span>
+                                </button>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Demo Cursor for Extension -->
+                    <div class="extension-cursor">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="white" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- How It Works Section -->
@@ -257,7 +394,7 @@
                             <span>✓</span>
                             <span>✓</span>
                         </div>
-                    </div>
+                </div>
                     <div class="step-content">
                         <div class="step-badge">Phase 3</div>
                         <h3 class="step-title">Execute</h3>
@@ -271,7 +408,7 @@
                             <li>✓ AI-powered element recovery</li>
                             <li>✓ Self-healing automation that adapts to changes</li>
                         </ul>
-                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -465,14 +602,14 @@
                                 <strong>Zero Technical Skills Needed</strong>
                                 <p>Just show Mimo.AI what to do—no coding, no setup</p>
                             </div>
-                        </div>
+                </div>
                         <div class="solution-item">
                             <div class="solution-icon">✓</div>
                             <div>
                                 <strong>Self-Healing Automation</strong>
                                 <p>AI adapts to UI changes using 9 different recovery strategies</p>
+                                </div>
                             </div>
-                        </div>
                         <div class="solution-item">
                             <div class="solution-icon">✓</div>
                             <div>
@@ -500,8 +637,8 @@
                     <p class="waitlist-description">
                         Mimo.AI is launching soon! Join our exclusive waitlist and be among the first to 
                         experience browser automation that actually works. Plus, get early access perks!
-                    </p>
-                </div>
+                </p>
+            </div>
                 
                 <form class="waitlist-form" id="waitlistForm">
                     <div class="form-row">
@@ -548,7 +685,7 @@
                             <strong>Exclusive Perks</strong>
                             <p>Special benefits for early adopters</p>
                         </div>
-                    </div>
+                </div>
                     <div class="benefit-item">
                         <div class="benefit-icon">💬</div>
                         <div class="benefit-text">
@@ -561,9 +698,9 @@
                         <div class="benefit-text">
                             <strong>Lifetime Discount</strong>
                             <p>Lock in special pricing forever</p>
+                </div>
                         </div>
                     </div>
-                </div>
                 
                 <div class="waitlist-stats">
                     <div class="stat-box">
