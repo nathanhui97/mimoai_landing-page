@@ -6409,15 +6409,16 @@ section {
         max-width: 100%;
         padding: 0.5rem 0 0;
         overflow: visible;
+        display: flex;
+        justify-content: center;
     }
     
     .interactive-browser-demo {
-        width: 130%;
-        max-width: 130%;
-        transform: scale(0.75);
-        transform-origin: top left;
-        margin-left: -2%;
-        margin-bottom: -80px;
+        width: 135%;
+        max-width: 135%;
+        transform: scale(0.78);
+        transform-origin: top center;
+        margin-bottom: -60px;
     }
 
     .browser-window {
@@ -7073,8 +7074,10 @@ section {
     
     /* Scale down more on extra small phones */
     .interactive-browser-demo {
-        transform: scale(0.65);
-        margin-bottom: -100px;
+        width: 150%;
+        max-width: 150%;
+        transform: scale(0.70);
+        margin-bottom: -80px;
     }
     
     .section-headline {
