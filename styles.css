@@ -6404,22 +6404,22 @@ section {
         font-size: 0.6rem;
     }
 
-    /* Browser Demo - Scale container while maintaining layout */
+    /* Browser Demo - Responsive scaling based on viewport width */
     .hero-visual-centered {
         max-width: 100%;
         padding: 0.5rem 0 0;
-        overflow: visible;
+        overflow-x: hidden;
+        overflow-y: visible;
+        display: flex;
+        justify-content: center;
     }
     
     .interactive-browser-demo {
-        width: 800px;
+        width: 900px;
         max-width: none;
-        transform: scale(0.85);
+        transform: scale(0.80);
         transform-origin: top center;
-        margin: 0 auto -80px;
-        position: relative;
-        left: 50%;
-        margin-left: -400px;
+        margin-bottom: -100px;
     }
 
     .browser-window {
@@ -6430,6 +6430,21 @@ section {
     /* Extension popup maintains desktop position */
     .extension-popup {
         /* Desktop positioning preserved */
+    }
+    
+    /* Adjust for narrower screens */
+    @media (max-width: 400px) {
+        .interactive-browser-demo {
+            transform: scale(0.72);
+            margin-bottom: -120px;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        .interactive-browser-demo {
+            transform: scale(0.65);
+            margin-bottom: -140px;
+        }
     }
     
     /* All element sizes stay desktop - scaling handles reduction */
@@ -7072,12 +7087,10 @@ section {
         padding: 0.25rem 0 0;
     }
     
-    /* Scale down more on extra small phones */
+    /* Scale down more on smaller phones */
     .interactive-browser-demo {
-        width: 800px;
-        transform: scale(0.75);
-        margin: 0 auto -100px;
-        margin-left: -400px;
+        transform: scale(0.70);
+        margin-bottom: -130px;
     }
     
     .section-headline {
