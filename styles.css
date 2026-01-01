@@ -6426,13 +6426,75 @@ section {
         overflow: visible !important;
     }
     
-    /* Browser chrome - keep desktop sizes, scaling handles reduction */
+    /* Make extension popup narrower on mobile to show more browser content */
+    .extension-popup {
+        width: 240px !important;
+        right: 6px !important;
+        padding: 0.5rem !important;
+    }
     
-    /* Browser tabs/address bar - keep desktop sizes, scaling handles reduction */
-
-    /* Webpage content - keep desktop sizes, scaling handles reduction */
+    /* Reduce extension popup element sizes */
+    .extension-header {
+        padding: 0.4rem 0.5rem;
+    }
     
-    /* Browser demo content - desktop sizes preserved, scaling handles reduction */
+    .profile-circle {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .profile-name {
+        font-size: 0.8rem;
+    }
+    
+    .create-workflow-btn {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+        margin: 0.5rem 0;
+    }
+    
+    .workflow-card {
+        padding: 0.5rem;
+        gap: 0.4rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .workflow-icon {
+        font-size: 1.2rem;
+        width: 28px;
+        height: 28px;
+    }
+    
+    .workflow-name {
+        font-size: 0.75rem;
+    }
+    
+    .workflow-desc {
+        font-size: 0.65rem;
+    }
+    
+    .ai-working-banner {
+        padding: 0.5rem;
+        gap: 0.4rem;
+    }
+    
+    .ai-icon {
+        font-size: 1rem;
+    }
+    
+    .ai-label {
+        font-size: 0.75rem;
+    }
+    
+    .ai-sublabel {
+        font-size: 0.6rem;
+    }
+    
+    .checklist-item {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.5rem;
+        gap: 0.4rem;
+    }
     
     /* Hide cursor animation on mobile */
     .extension-cursor {
@@ -7078,6 +7140,22 @@ section {
         max-width: 150%;
         transform: scale(0.70);
         margin-bottom: -80px;
+    }
+    
+    /* Even narrower extension on small phones */
+    .extension-popup {
+        width: 200px !important;
+        right: 4px !important;
+        padding: 0.4rem !important;
+    }
+    
+    .workflow-card {
+        padding: 0.4rem;
+    }
+    
+    .checklist-item {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.4rem;
     }
     
     .section-headline {
