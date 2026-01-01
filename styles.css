@@ -123,6 +123,43 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Mobile Menu Active State */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.nav-links.active {
+    display: flex !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--border-color);
+}
+
+.nav-links.active li {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-links.active li:last-child {
+    border-bottom: none;
+}
+
 /* Buttons */
 .btn-primary, .btn-secondary {
     padding: 0.75rem 1.5rem;
@@ -6271,6 +6308,23 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Prevent horizontal overflow on mobile */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Container */
+    .container {
+        padding: 0 16px;
+    }
+    
+    /* Navigation */
     .nav-links {
         display: none;
     }
@@ -6278,57 +6332,933 @@ section {
     .mobile-menu-toggle {
         display: flex;
     }
+    
+    .nav-cta {
+        display: none;
+    }
+    
+    .logo-image {
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem;
+    }
 
+    /* Hero Section */
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+    
     .hero-content {
         max-width: 100%;
+        padding: 0 8px;
+    }
+    
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 1rem;
+        margin-bottom: 1rem;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
+        line-height: 1.25;
+        margin-bottom: 0;
+    }
+    
+    /* CRITICAL FIX: Remove nowrap on mobile */
+    .hero-line-1,
+    .hero-line-2 {
+        white-space: normal;
+        word-wrap: break-word;
     }
 
     .hero-supporting {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-top: 0.75rem;
+        padding: 0 8px;
     }
 
     .hero-cta {
         justify-content: center;
-    }
-
-    .hero-cta button {
+        margin: 1.5rem auto 0;
         width: 100%;
+        padding: 0 8px;
     }
 
+    .btn-hero-cta {
+        width: 100%;
+        max-width: 320px;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .btn-hero-cta .cta-text {
+        font-size: 0.95rem;
+    }
+    
+    .btn-hero-cta .cta-subtext {
+        font-size: 0.65rem;
+    }
+
+    /* Browser Demo - Critical Mobile Fixes */
     .hero-visual-centered {
-        max-width: 95%;
+        max-width: 100%;
+        padding: 1rem 0;
+        overflow: hidden;
     }
 
     .browser-window {
         width: 100%;
+        max-width: 100%;
+        border-radius: 8px;
+        transform: scale(0.95);
+        transform-origin: top center;
+    }
+    
+    .browser-chrome {
+        padding: 0.35rem 0.5rem 0;
+        gap: 0.5rem;
+    }
+    
+    .window-controls {
+        gap: 3px;
+    }
+    
+    .control-dot {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .browser-tabs {
+        gap: 3px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .browser-tabs::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .browser-tab {
+        padding: 0.25rem 0.4rem;
+        gap: 0.25rem;
+        min-width: auto;
+        font-size: 0.65rem;
+    }
+    
+    .tab-icon {
+        font-size: 0.7rem;
+    }
+    
+    .browser-extensions {
+        gap: 3px;
+    }
+    
+    .extension-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .address-bar-row {
+        padding: 0.4rem 0.5rem;
+    }
+    
+    .address-bar {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.65rem;
+        gap: 0.35rem;
+    }
+    
+    .lock-icon {
+        font-size: 0.65rem;
     }
 
+    /* Webpage Content Scaling */
+    .webpage-content {
+        padding: 1.5rem 1rem;
+        min-height: 280px;
+        font-size: 0.8rem;
+    }
+    
+    /* Order Tab */
+    .order-view {
+        gap: 0.75rem;
+    }
+    
+    .order-header {
+        padding: 0.5rem;
+        gap: 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    .order-number {
+        font-size: 0.75rem;
+    }
+    
+    .order-status {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+    }
+    
+    .order-details {
+        gap: 0.5rem;
+    }
+    
+    .detail-row {
+        padding: 0.6rem;
+        gap: 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Spreadsheet */
+    .spreadsheet-toolbar {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    .spreadsheet-row {
+        grid-template-columns: 30px 1fr 1fr 70px;
+        font-size: 0.7rem;
+    }
+    
+    .cell {
+        padding: 0.4rem 0.3rem;
+    }
+    
+    .cell-num {
+        font-size: 0.65rem;
+    }
+    
+    /* Shipping Form */
+    .shipping-header {
+        padding: 0.6rem;
+        gap: 0.4rem;
+        font-size: 0.7rem;
+    }
+    
+    .shipping-form {
+        gap: 0.75rem;
+    }
+    
+    .shipping-field {
+        gap: 0.35rem;
+    }
+    
+    .field-label {
+        font-size: 0.7rem;
+    }
+    
+    .field-box {
+        padding: 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .btn-create-label {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .label-confirmation {
+        padding: 1.25rem;
+    }
+    
+    .confirmation-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.25rem;
+    }
+    
+    .confirmation-title {
+        font-size: 1rem;
+    }
+    
+    .confirmation-text {
+        font-size: 0.7rem;
+    }
+
+    /* Extension Popup - Mobile Layout */
     .extension-popup {
         position: relative;
         right: auto;
         top: auto;
         bottom: auto;
-        margin: 2rem auto 0;
-        width: 90%;
+        margin: 1.5rem auto 0;
+        width: 92%;
+        max-width: 340px;
         transform: none;
-        min-height: 300px;
+        min-height: 260px;
+        padding: 0.75rem;
+        border-radius: 10px;
     }
-
-    .webpage-content {
-        padding: 2.5rem 1.5rem;
-        min-height: 350px;
+    
+    .extension-header {
+        padding: 0.5rem;
+    }
+    
+    .header-profile {
+        gap: 0.4rem;
+    }
+    
+    .profile-circle {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .profile-name {
+        font-size: 0.85rem;
+    }
+    
+    .settings-icon {
+        font-size: 0.9rem;
+    }
+    
+    .create-workflow-btn {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+        gap: 0.4rem;
+        margin: 0.75rem 0;
+    }
+    
+    .workflows-header {
+        padding: 0.5rem 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .workflows-title {
+        font-size: 0.85rem;
+    }
+    
+    .workflows-count {
+        font-size: 0.7rem;
+    }
+    
+    .workflow-card {
+        padding: 0.75rem;
+        gap: 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .workflow-icon {
+        font-size: 1.25rem;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .workflow-name {
+        font-size: 0.85rem;
+    }
+    
+    .workflow-desc {
+        font-size: 0.7rem;
+    }
+    
+    .workflow-stats {
+        font-size: 0.65rem;
+    }
+    
+    .play-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+    
+    .ai-working-banner {
+        padding: 0.75rem;
+        gap: 0.6rem;
+    }
+    
+    .ai-icon {
+        font-size: 1.25rem;
+    }
+    
+    .ai-label {
+        font-size: 0.8rem;
+    }
+    
+    .ai-sublabel {
+        font-size: 0.65rem;
+    }
+    
+    .execution-checklist {
+        gap: 0.6rem;
+        padding: 0.75rem 0;
+    }
+    
+    .checklist-item {
+        font-size: 0.75rem;
+        gap: 0.5rem;
+    }
+    
+    .success-header {
+        padding: 1.25rem;
+    }
+    
+    .success-icon-big {
+        font-size: 2.5rem;
+    }
+    
+    .success-title {
+        font-size: 1.1rem;
+    }
+    
+    .success-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .extension-cursor {
+        display: none;
     }
     
     .scenario-content {
-        top: 2.5rem;
-        left: 1.5rem;
-        right: 1.5rem;
+        top: 1.5rem;
+        left: 1rem;
+        right: 1rem;
     }
 
+    /* How It Works Section */
+    .how-it-works {
+        padding: 3rem 0;
+    }
+    
+    .section-header-hero {
+        padding: 0 8px;
+    }
+    
+    .section-eyebrow {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.8rem;
+    }
+    
+    .section-headline {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    .section-subline {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .steps-intro {
+        font-size: 0.9rem;
+        padding: 1rem 1.25rem;
+        margin: 2rem auto;
+    }
+    
+    .step-card {
+        padding: 1.5rem;
+        margin: 2rem auto;
+        border-radius: 1rem;
+    }
+    
+    .step-card + .step-card {
+        margin-top: 2rem;
+    }
+    
+    .step-card-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .step-card.reverse {
+        direction: ltr;
+    }
+    
+    .step-text-content {
+        order: 1;
+    }
+    
+    .step-visual-card {
+        order: 2;
+    }
+    
+    .step-badge-pill {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.8rem;
+    }
+    
+    .feature-heading {
+        font-size: 1.35rem;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
+    }
+    
+    .feature-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .feature-benefits {
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }
+    
+    .feature-benefits li {
+        font-size: 0.85rem;
+    }
+    
+    /* Visual Containers in Steps */
+    .visual-container {
+        min-height: 280px;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    
+    .visual-container.square-large {
+        aspect-ratio: 1 / 1;
+    }
+    
+    /* Recording Scene */
+    .recording-scene {
+        gap: 0.75rem;
+        padding: 0.5rem;
+    }
+    
+    .crm-interface {
+        border-radius: 6px;
+        padding: 0.6rem;
+        font-size: 0.7rem;
+    }
+    
+    .crm-tabs {
+        gap: 0.4rem;
+        padding: 0.4rem;
+    }
+    
+    .crm-tab {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.7rem;
+    }
+    
+    .crm-table {
+        font-size: 0.7rem;
+    }
+    
+    .table-header,
+    .table-row {
+        grid-template-columns: 1.2fr 0.8fr 0.6fr;
+        gap: 0.4rem;
+        padding: 0.4rem;
+    }
+    
+    .more-button {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.65rem;
+    }
+    
+    .task-modal {
+        padding: 0.75rem;
+        max-width: 90%;
+    }
+    
+    .modal-header {
+        font-size: 0.8rem;
+        padding: 0.5rem 0;
+    }
+    
+    .modal-field {
+        margin: 0.6rem 0;
+    }
+    
+    .modal-field label {
+        font-size: 0.7rem;
+    }
+    
+    .dropdown-field {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .modal-actions {
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+    }
+    
+    .btn-cancel,
+    .btn-save {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    .extension-panel-passive {
+        padding: 0.75rem;
+        max-width: 85%;
+    }
+    
+    .extension-header-passive {
+        gap: 0.4rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .mimo-icon-small {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .extension-title {
+        font-size: 0.75rem;
+    }
+    
+    .recording-status-passive {
+        padding: 0.4rem 0.6rem;
+        gap: 0.4rem;
+    }
+    
+    .recording-dot {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .status-text-passive {
+        font-size: 0.7rem;
+    }
+    
+    .action-steps {
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+    }
+    
+    .action-step {
+        padding: 0.5rem;
+        gap: 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    /* Understanding Scene */
+    .understanding-scene {
+        gap: 0.75rem;
+        padding: 0.5rem;
+    }
+    
+    .crm-interface-static {
+        border-radius: 6px;
+        padding: 0.6rem;
+        font-size: 0.7rem;
+    }
+    
+    .intent-summary-card {
+        padding: 0.75rem;
+        max-width: 92%;
+    }
+    
+    .intent-header {
+        gap: 0.4rem;
+        padding-bottom: 0.6rem;
+    }
+    
+    .intent-title {
+        font-size: 0.75rem;
+    }
+    
+    .intent-items {
+        gap: 0.5rem;
+        margin: 0.75rem 0;
+    }
+    
+    .intent-item {
+        gap: 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .detected-section {
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+    }
+    
+    .detected-label {
+        font-size: 0.7rem;
+    }
+    
+    .detected-tags {
+        gap: 0.4rem;
+        flex-wrap: wrap;
+    }
+    
+    .detected-tag {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    .goal-text {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+    
+    /* Execution Pipeline */
+    .execution-pipeline {
+        gap: 0.75rem;
+        padding: 0.5rem;
+    }
+    
+    .workflow-card-panel {
+        padding: 0.75rem;
+        border-radius: 8px;
+    }
+    
+    .workflow-library-header {
+        margin-bottom: 0.75rem;
+    }
+    
+    .library-title {
+        font-size: 0.85rem;
+    }
+    
+    .library-count {
+        font-size: 0.7rem;
+    }
+    
+    .workflow-card-item {
+        padding: 0.75rem;
+        gap: 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .workflow-start-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+    
+    .mimo-input-panel {
+        padding: 0.5rem;
+    }
+    
+    .input-form-card {
+        padding: 0.75rem;
+        border-radius: 8px;
+    }
+    
+    .form-header-mimo {
+        gap: 0.5rem;
+        padding-bottom: 0.6rem;
+    }
+    
+    .form-title-mimo {
+        font-size: 0.8rem;
+    }
+    
+    .form-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .input-fields-mimo {
+        gap: 0.6rem;
+    }
+    
+    .input-field-mimo {
+        gap: 0.3rem;
+    }
+    
+    .field-label-mimo {
+        font-size: 0.7rem;
+    }
+    
+    .input-box-mimo {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .execute-btn-mimo {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+        margin-top: 0.75rem;
+    }
+    
+    .execution-focal-card {
+        padding: 0.75rem;
+        border-radius: 8px;
+    }
+    
+    .execution-header {
+        padding: 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .progress-section {
+        margin-top: 0.75rem;
+    }
+    
+    .progress-text {
+        font-size: 0.7rem;
+    }
+    
+    .animated-cursor {
+        display: none;
+    }
+
+    /* Industries Section */
+    .industries-section {
+        padding: 3rem 0;
+    }
+    
+    .industries-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .industry-card {
+        padding: 1.5rem;
+    }
+    
+    .industry-icon {
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .industry-title {
+        font-size: 1.1rem;
+    }
+    
+    .industry-description {
+        font-size: 0.9rem;
+    }
+
+    /* Waitlist Section */
+    .waitlist-section {
+        padding: 3rem 0;
+    }
+    
+    .waitlist-title {
+        font-size: 1.75rem;
+    }
+    
+    .waitlist-button-wrapper {
+        margin-top: 1.5rem;
+    }
+    
+    .btn-waitlist-simple {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.8rem 1.75rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Modal */
+    .modal-content {
+        padding: 1.75rem 1.25rem;
+        width: 94%;
+        max-width: 500px;
+        border-radius: 16px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .modal-close {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 32px;
+        height: 32px;
+        font-size: 1.5rem;
+    }
+    
+    .form-group-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .modal-title {
+        font-size: 1.35rem;
+        line-height: 1.3;
+    }
+    
+    .modal-incentive {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.875rem;
+        gap: 0.5rem;
+    }
+    
+    .incentive-content {
+        text-align: center;
+    }
+    
+    .incentive-label {
+        font-size: 0.75rem;
+    }
+    
+    .incentive-text {
+        font-size: 0.85rem;
+    }
+    
+    .incentive-emoji {
+        font-size: 1.5rem;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        font-size: 0.95rem;
+        padding: 0.75rem;
+    }
+    
+    .btn-submit-waitlist {
+        padding: 0.875rem;
+        font-size: 0.95rem;
+    }
+    
+    .modal-notification {
+        font-size: 0.8rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .waitlist-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .waitlist-stats {
+        gap: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 2.5rem 0 1.5rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-brand {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .footer-tagline {
+        font-size: 0.9rem;
+    }
+    
+    .footer-columns {
+        flex-direction: column;
+        gap: 1.5rem;
+        justify-content: flex-start;
+        text-align: center;
+    }
+    
+    .footer-title {
+        font-size: 0.95rem;
+    }
+    
+    .footer-links li a {
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Workflow Steps */
     .workflow-step,
     .workflow-step.reverse {
         grid-template-columns: 1fr;
@@ -6345,11 +7275,11 @@ section {
 
     .ps-content {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .features-grid {
@@ -6367,89 +7297,99 @@ section {
     .pricing-grid {
         grid-template-columns: 1fr;
     }
-
-
-    .waitlist-title {
-        font-size: 2rem;
-    }
-    
-    .waitlist-button-wrapper {
-        margin-top: 2rem;
-    }
-    
-    .btn-waitlist-simple {
-        width: 100%;
-        max-width: 300px;
-        padding: 0.875rem 2rem;
-        font-size: 1rem;
-    }
-    
-    .modal-content {
-        padding: 2rem 1.5rem;
-        width: 95%;
-    }
-    
-    .form-group-row {
-        grid-template-columns: 1fr;
-    }
-    
-    .modal-title {
-        font-size: 1.5rem;
-    }
-    
-    .modal-incentive {
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem;
-    }
-    
-    .incentive-content {
-        text-align: center;
-    }
-    
-    .incentive-emoji {
-        font-size: 1.75rem;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .waitlist-benefits {
-        grid-template-columns: 1fr;
-    }
-
-    .waitlist-stats {
-        gap: 1.5rem;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .footer-brand {
-        max-width: 100%;
-    }
-    
-    .footer-columns {
-        flex-direction: column;
-        gap: 2rem;
-        justify-content: flex-start;
-    }
 }
 
 @media (max-width: 480px) {
+    /* Extra small phones */
+    .container {
+        padding: 0 12px;
+    }
+    
+    .hero {
+        padding: 5rem 0 2.5rem;
+    }
+    
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    .hero-supporting {
+        font-size: 0.9rem;
+    }
+    
+    .btn-hero-cta {
+        padding: 0.7rem 1.25rem;
+    }
+    
+    .btn-hero-cta .cta-text {
+        font-size: 0.9rem;
+    }
+    
+    .btn-hero-cta .cta-subtext {
+        font-size: 0.6rem;
+    }
+    
+    .browser-window {
+        transform: scale(0.9);
+    }
+    
+    .extension-popup {
+        width: 95%;
+        padding: 0.6rem;
+    }
+    
+    .section-headline {
+        font-size: 1.5rem;
+    }
+    
+    .section-subline {
+        font-size: 0.875rem;
+    }
+    
+    .feature-heading {
+        font-size: 1.2rem;
+    }
+    
+    .feature-description {
+        font-size: 0.85rem;
+    }
+    
+    .step-card {
+        padding: 1.25rem;
+    }
+    
+    .visual-container {
+        min-height: 240px;
+    }
+    
+    .industry-card {
+        padding: 1.25rem;
+    }
+    
+    .industry-title {
+        font-size: 1rem;
+    }
+    
+    .industry-description {
+        font-size: 0.85rem;
+    }
+    
+    .modal-content {
+        padding: 1.5rem 1rem;
+        width: 96%;
+    }
+    
+    .modal-title {
+        font-size: 1.2rem;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .hero-stats {
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 }
 
