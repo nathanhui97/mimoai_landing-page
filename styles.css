@@ -3298,6 +3298,7 @@ section {
     position: relative;
 }
 
+
 .how-it-works .container {
     display: flex;
     flex-direction: column;
@@ -7744,7 +7745,7 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Prevent horizontal overflow on mobile */
+    /* Prevent horizontal overflow on mobile - updated spacing */
     html, body {
         overflow-x: hidden;
         max-width: 100%;
