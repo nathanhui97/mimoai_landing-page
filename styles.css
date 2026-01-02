@@ -4348,14 +4348,17 @@ section {
         0 32px 64px rgba(0, 0, 0, 0.05);
     max-width: 420px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .panel-header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 1.75rem;
-    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
 }
 
@@ -4374,7 +4377,7 @@ section {
     background: rgba(249, 249, 251, 0.6);
     border: none;
     border-radius: 16px;
-    margin-bottom: 2.25rem;
+    margin-bottom: 1.75rem;
     transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
     box-shadow: 
         0 1px 2px rgba(0, 0, 0, 0.02),
@@ -6457,13 +6460,13 @@ section {
     }
     
     .panel-header {
-        margin-bottom: 1.25rem;
-        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.875rem;
     }
     
     .minimal-workflow-card {
         padding: 1rem 1.125rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
     
     .progress-ring-container {
@@ -9073,13 +9076,13 @@ section {
     }
     
     .panel-header {
-        margin-bottom: 1rem;
-        padding-bottom: 0.75rem;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.625rem;
     }
     
     .minimal-workflow-card {
         padding: 0.75rem 0.875rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
     }
     
     .workflow-icon-svg svg {
