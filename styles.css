@@ -6473,13 +6473,12 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 0 1.5rem 3rem;
+        padding: 1.5rem 1.5rem 3rem;
         opacity: 1 !important;
     }
     
     .step-text-item[data-step="1"] {
         order: 2;
-        padding-top: 0.5rem;
     }
     
     .step-text-item[data-step="2"] {
@@ -6500,14 +6499,13 @@ section {
         visibility: visible !important;
         height: auto;
         margin-top: 0;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
         width: 100%;
     }
     
     .step-visual-item[data-visual="1"] {
         order: 1;
-        margin-top: 2.5rem;
-        margin-bottom: 0.75rem;
+        margin-top: 3.5rem;
     }
     
     .step-visual-item[data-visual="2"] {
@@ -8006,7 +8004,7 @@ section {
     }
     
     .section-header-hero {
-        padding: 0 8px 2rem;
+        padding: 0 8px 3.5rem;
     }
     
     .section-eyebrow {
@@ -8057,14 +8055,13 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 0 1rem 2.5rem;
+        padding: 1.25rem 1rem 2.5rem;
         opacity: 1 !important;
         width: 100%;
     }
     
     .step-text-item[data-step="1"] {
         order: 2;
-        padding-top: 0.5rem;
     }
     
     .step-text-item[data-step="2"] {
@@ -8085,14 +8082,13 @@ section {
         visibility: visible !important;
         height: auto;
         margin-top: 0;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1.25rem;
         width: 100%;
     }
     
     .step-visual-item[data-visual="1"] {
         order: 1;
-        margin-top: 2rem;
-        margin-bottom: 0.75rem;
+        margin-top: 3rem;
     }
     
     .step-visual-item[data-visual="2"] {
@@ -9085,12 +9081,11 @@ section {
     
     .step-text-item {
         width: 100%;
-        padding: 0 1rem 2rem;
+        padding: 1rem 1rem 2rem;
     }
     
     .step-text-item[data-step="1"] {
         order: 2;
-        padding-top: 0.5rem;
     }
     
     .step-text-item[data-step="2"] {
@@ -9107,13 +9102,12 @@ section {
     
     .step-visual-item {
         margin-top: 0;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
     
     .step-visual-item[data-visual="1"] {
         order: 1;
-        margin-top: 1.75rem;
-        margin-bottom: 0.75rem;
+        margin-top: 2.5rem;
     }
     
     .step-visual-item[data-visual="2"] {
