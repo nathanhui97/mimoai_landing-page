@@ -6473,12 +6473,13 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 0.5rem 1.5rem 3rem;
+        padding: 0 1.5rem 3rem;
         opacity: 1 !important;
     }
     
     .step-text-item[data-step="1"] {
         order: 2;
+        padding-top: 0.5rem;
     }
     
     .step-text-item[data-step="2"] {
@@ -6505,7 +6506,8 @@ section {
     
     .step-visual-item[data-visual="1"] {
         order: 1;
-        margin-top: 1.5rem;
+        margin-top: 2.5rem;
+        margin-bottom: 0.75rem;
     }
     
     .step-visual-item[data-visual="2"] {
@@ -8004,7 +8006,7 @@ section {
     }
     
     .section-header-hero {
-        padding: 0 8px;
+        padding: 0 8px 2rem;
     }
     
     .section-eyebrow {
@@ -8033,7 +8035,7 @@ section {
         display: flex;
         flex-direction: column;
         gap: 0;
-        padding: 1rem 0;
+        padding: 0;
     }
     
     .steps-text-column,
@@ -8055,13 +8057,14 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 0.5rem 1rem 2.5rem;
+        padding: 0 1rem 2.5rem;
         opacity: 1 !important;
         width: 100%;
     }
     
     .step-text-item[data-step="1"] {
         order: 2;
+        padding-top: 0.5rem;
     }
     
     .step-text-item[data-step="2"] {
@@ -8088,7 +8091,8 @@ section {
     
     .step-visual-item[data-visual="1"] {
         order: 1;
-        margin-top: 1.25rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
     }
     
     .step-visual-item[data-visual="2"] {
@@ -9081,11 +9085,12 @@ section {
     
     .step-text-item {
         width: 100%;
-        padding: 0.5rem 1rem 2rem;
+        padding: 0 1rem 2rem;
     }
     
     .step-text-item[data-step="1"] {
         order: 2;
+        padding-top: 0.5rem;
     }
     
     .step-text-item[data-step="2"] {
@@ -9107,7 +9112,8 @@ section {
     
     .step-visual-item[data-visual="1"] {
         order: 1;
-        margin-top: 1rem;
+        margin-top: 1.75rem;
+        margin-bottom: 0.75rem;
     }
     
     .step-visual-item[data-visual="2"] {
