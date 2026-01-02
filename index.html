@@ -378,303 +378,186 @@
                         <!-- Visual 1: Recording -->
                         <div class="step-visual-item active" data-visual="1">
                             <div class="visual-container purple-bg square-large">
-                                <div class="recording-scene">
-                                    <!-- Salesforce/CRM UI -->
-                                    <div class="crm-interface">
-                                <!-- Tabs -->
-                                <div class="crm-tabs">
-                                    <div class="crm-tab">Leads</div>
-                                    <div class="crm-tab active">Accounts</div>
-                                    <div class="crm-tab">Contacts</div>
-                                </div>
-                                
-                                <!-- Table -->
-                                <div class="crm-table">
-                                    <div class="table-header">
-                                        <div class="table-col">Account Name</div>
-                                        <div class="table-col">Industry</div>
-                                        <div class="table-col">Actions</div>
-                                    </div>
-                                    
-                                    <div class="table-row">
-                                        <div class="table-col">Acme Corp</div>
-                                        <div class="table-col">Technology</div>
-                                        <div class="table-col">
-                                            <button class="more-button">⋯ More</button>
+                                <div class="simple-recording-scene">
+                                    <!-- Simple Browser Mock -->
+                                    <div class="simple-browser">
+                                        <div class="simple-browser-chrome">
                                         </div>
-                                    </div>
-                                    
-                                    <div class="table-row highlighted-row">
-                                        <div class="table-col">TechStart Inc</div>
-                                        <div class="table-col">Software</div>
-                                        <div class="table-col">
-                                            <button class="more-button active-more">⋯ More</button>
+                                        <div class="simple-browser-content">
+                                            <!-- Accounting Invoice Document -->
+                                            <div class="compliance-document">
+                                                <div class="doc-header">
+                                                    <div class="doc-icon-svg">
+                                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="5" y="3" width="14" height="18" rx="2" stroke="#ff6b35" stroke-width="1.5"/>
+                                                            <line x1="8" y1="8" x2="16" y2="8" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                            <line x1="8" y1="12" x2="16" y2="12" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                            <line x1="8" y1="16" x2="13" y2="16" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="doc-title-section">
+                                                        <h4 class="doc-title">Invoice #INV-2847</h4>
+                                                        <span class="doc-subtitle">Vendor: Office Supplies Inc</span>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="compliance-checklist">
+                                                    <div class="compliance-item clickable-element" data-step="1">
+                                                        <div class="checkbox">
+                                                            <span class="checkmark">✓</span>
+                                                        </div>
+                                                        <span class="item-label">Enter in accounting system</span>
+                                                        <div class="click-indicator"></div>
+                                                    </div>
+                                                    
+                                                    <div class="compliance-item clickable-element" data-step="2">
+                                                        <div class="checkbox">
+                                                            <span class="checkmark">✓</span>
+                                                        </div>
+                                                        <span class="item-label">Assign GL account</span>
+                                                        <div class="click-indicator"></div>
+                                                    </div>
+                                                    
+                                                    <div class="compliance-item clickable-element" data-step="3">
+                                                        <div class="checkbox">
+                                                            <span class="checkmark">✓</span>
+                                                        </div>
+                                                        <span class="item-label">Schedule payment</span>
+                                                        <div class="click-indicator"></div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="approval-section">
+                                                    <button class="approve-button clickable-element" data-step="4">
+                                                        <span class="approve-icon">✓</span>
+                                                        Submit Invoice
+                                                        <div class="click-indicator"></div>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Animated Cursor -->
+                                            <div class="learning-cursor">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="white" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            
+                                            <!-- Floating Learning Indicator -->
+                                            <div class="floating-learning-indicator">
+                                                <div class="indicator-dot"></div>
+                                                <span class="indicator-text">Mimo learning</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="table-row">
-                                        <div class="table-col">Global Solutions</div>
-                                        <div class="table-col">Consulting</div>
-                                        <div class="table-col">
-                                            <button class="more-button">⋯ More</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Task Modal (appearing) -->
-                                <div class="task-modal">
-                                    <div class="modal-header">Create Task</div>
-                                    <div class="modal-field">
-                                        <label>Task Type</label>
-                                        <div class="dropdown-field active-dropdown">
-                                            <span>Follow-up</span>
-                                            <span class="dropdown-arrow">▼</span>
-                                        </div>
-                                    </div>
-                                    <div class="modal-actions">
-                                        <button class="btn-cancel">Cancel</button>
-                                        <button class="btn-save">Save</button>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Mimo Extension Panel (Tracking Steps) -->
-                            <div class="extension-panel-passive">
-                                <div class="extension-header-passive">
-                                    <img src="logo.png" alt="Mimo" class="mimo-icon-small">
-                                    <span class="extension-title">Mimo</span>
-                                </div>
-                                <div class="recording-status-passive">
-                                    <div class="recording-dot"></div>
-                                    <span class="status-text-passive">Recording</span>
-                                </div>
-                                <div class="action-steps">
-                                    <div class="action-step completed">
-                                        <span class="step-check">✓</span>
-                                        <span class="step-text">Opened "Accounts"</span>
-                                    </div>
-                                    <div class="action-step completed">
-                                        <span class="step-check">✓</span>
-                                        <span class="step-text">Clicked "More" → "Create Task"</span>
-                                    </div>
-                                    <div class="action-step active">
-                                        <span class="step-check">⟳</span>
-                                        <span class="step-text">Selected "Follow-up"</span>
-                                    </div>
-                                    <div class="action-step pending">
-                                        <span class="step-check">○</span>
-                                        <span class="step-text">Save record</span>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         </div>
                         
                         <!-- Visual 2: Understanding -->
                         <div class="step-visual-item" data-visual="2">
                             <div class="visual-container blue-bg square-large">
-                                <div class="understanding-scene">
-                                    <!-- CRM Interface (Same as Step 1, but static) -->
-                                    <div class="crm-interface-static">
-                                <!-- Tabs -->
-                                <div class="crm-tabs">
-                                    <div class="crm-tab">Leads</div>
-                                    <div class="crm-tab active">Accounts</div>
-                                    <div class="crm-tab">Contacts</div>
-                                </div>
-                                
-                                <!-- Table (Static) -->
-                                <div class="crm-table">
-                                    <div class="table-header">
-                                        <div class="table-col">Account Name</div>
-                                        <div class="table-col">Industry</div>
-                                        <div class="table-col">Actions</div>
-                                    </div>
-                                    
-                                    <div class="table-row">
-                                        <div class="table-col">Acme Corp</div>
-                                        <div class="table-col">Technology</div>
-                                        <div class="table-col">
-                                            <button class="more-button">⋯ More</button>
+                                <div class="simple-understanding-scene">
+                                    <!-- Mimo Analysis Panel -->
+                                    <div class="mimo-analysis-panel">
+                                        <div class="analysis-header">
+                                            <div class="mimo-thinking-avatar">
+                                                <img src="logo.png" alt="Mimo" class="mimo-icon-avatar">
+                                                <div class="thinking-dots">
+                                                    <span class="dot"></span>
+                                                    <span class="dot"></span>
+                                                    <span class="dot"></span>
+                                                </div>
+                                            </div>
+                                            <div class="analysis-title-section">
+                                                <h3 class="analysis-title">Mimo understands</h3>
+                                                <p class="analysis-subtitle">Invoice processing workflow detected</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="table-row">
-                                        <div class="table-col">TechStart Inc</div>
-                                        <div class="table-col">Software</div>
-                                        <div class="table-col">
-                                            <button class="more-button">⋯ More</button>
+                                        
+                                        <div class="variables-section">
+                                            <div class="section-label">Provide these and I'll run it:</div>
+                                            <div class="variable-items">
+                                                <div class="variable-item" data-order="1">
+                                                    <div class="variable-icon-svg">
+                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="5" y="4" width="14" height="16" rx="2" stroke="#ff6b35" stroke-width="1.5"/>
+                                                            <line x1="9" y1="9" x2="15" y2="9" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                            <line x1="9" y1="13" x2="12" y2="13" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="variable-name">Invoice Number</span>
+                                                </div>
+                                                <div class="variable-item" data-order="2">
+                                                    <div class="variable-icon-svg">
+                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect x="4" y="6" width="16" height="12" rx="1.5" stroke="#ff6b35" stroke-width="1.5"/>
+                                                            <path d="M4 9h16M8 6V4M16 6V4" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="variable-name">Vendor Name</span>
+                                                </div>
+                                                <div class="variable-item" data-order="3">
+                                                    <div class="variable-icon-svg">
+                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <circle cx="12" cy="12" r="8" stroke="#ff6b35" stroke-width="1.5"/>
+                                                            <path d="M12 8v8M9 12h6" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                        </svg>
+                                                    </div>
+                                                    <span class="variable-name">Amount</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="workflow-summary">
+                                            <span class="summary-icon">✓</span>
+                                            <span class="summary-text">Steps stay the same</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <!-- Mimo Intent Summary Card -->
-                            <div class="intent-summary-card">
-                                <div class="intent-header">
-                                    <img src="logo.png" alt="Mimo" class="mimo-icon-small">
-                                    <span class="intent-title">Mimo understood this task:</span>
-                                </div>
-                                
-                                <div class="intent-items">
-                                    <div class="intent-item">
-                                        <span class="intent-arrow">➤</span>
-                                        <span class="intent-text">Add a new contact</span>
-                                    </div>
-                                    <div class="intent-item">
-                                        <span class="intent-arrow">➤</span>
-                                        <span class="intent-text">Using data that changes each time</span>
-                                    </div>
-                                    <div class="intent-item">
-                                        <span class="intent-arrow">➤</span>
-                                        <span class="intent-text">Following the same navigation steps</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="intent-divider"></div>
-                                
-                                <div class="detected-section">
-                                    <div class="detected-inputs">
-                                        <div class="detected-label">Detected inputs:</div>
-                                        <div class="detected-tags">
-                                            <span class="detected-tag">Name</span>
-                                            <span class="detected-tag">Email</span>
-                                        </div>
-                                    </div>
-                                    <div class="detected-goal">
-                                        <div class="detected-label">Detected goal:</div>
-                                        <div class="goal-text">Contact created successfully</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         </div>
                         
                         <!-- Visual 3: Execution -->
                         <div class="step-visual-item" data-visual="3">
                             <div class="visual-container green-bg square-large">
-                                <div class="execution-pipeline">
-                            <!-- 1. Workflow Library - User Clicks Start -->
-                            <div class="workflow-card-panel">
-                                <div class="workflow-library-header">
-                                    <h3 class="library-title">My Workflows</h3>
-                                    <span class="library-count">3 saved</span>
-                                </div>
-                                
-                                <div class="workflow-card-item">
-                                    <div class="workflow-icon">📄</div>
-                                    <div class="workflow-info">
-                                        <div class="workflow-name-row">
-                                            <h3 class="workflow-name">Invoice Processing</h3>
-                                            <button class="workflow-start-btn">Start</button>
+                                <div class="simple-execution-scene">
+                                    <!-- Minimal Extension Panel -->
+                                    <div class="minimal-extension-panel">
+                                        <div class="panel-header">
+                                            <img src="logo.png" alt="Mimo" class="mimo-icon-small">
+                                            <span class="panel-title">Mimo</span>
                                         </div>
-                                        <p class="workflow-desc">Extracts invoice data to accounting software</p>
-                                        <span class="workflow-stats">Last run: 5 days ago • <strong>23 runs</strong></span>
-                                    </div>
-                                </div>
-                                
-                                <div class="workflow-card-item highlighted-workflow">
-                                    <div class="workflow-icon">🛍️</div>
-                                    <div class="workflow-info">
-                                        <div class="workflow-name-row">
-                                            <h3 class="workflow-name">Product Updates</h3>
-                                            <button class="workflow-start-btn active-start">Start</button>
+                                        
+                                        <!-- Single Workflow Card -->
+                                        <div class="minimal-workflow-card">
+                                            <div class="workflow-icon-svg">
+                                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect x="5" y="3" width="14" height="18" rx="2" stroke="#ff6b35" stroke-width="1.5"/>
+                                                    <line x1="8" y1="8" x2="16" y2="8" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                    <line x1="8" y1="12" x2="16" y2="12" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                    <line x1="8" y1="16" x2="13" y2="16" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                                                </svg>
+                                            </div>
+                                            <div class="workflow-details">
+                                                <h3 class="workflow-name">Invoice Processing</h3>
+                                            </div>
+                                            <button class="run-button">
+                                                <span class="run-icon">▶</span>
+                                                Run
+                                            </button>
                                         </div>
-                                        <p class="workflow-desc">Updates product prices and inventory on Shopify</p>
-                                        <span class="workflow-stats">Last run: 3 hours ago • <strong>243 runs</strong></span>
-                                    </div>
-                                </div>
-                                
-                                <div class="workflow-card-item">
-                                    <div class="workflow-icon">👤</div>
-                                    <div class="workflow-info">
-                                        <div class="workflow-name-row">
-                                            <h3 class="workflow-name">Lead Enrichment</h3>
-                                            <button class="workflow-start-btn">Start</button>
-                                        </div>
-                                        <p class="workflow-desc">Enriches leads with LinkedIn and company data</p>
-                                        <span class="workflow-stats">Last run: 1 week ago • <strong>89 runs</strong></span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Animated Cursor -->
-                                <div class="animated-cursor">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="white" stroke="black" stroke-width="1.5" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            
-                            <!-- 2. Mimo Input Form (Center) - Detected Info Needed -->
-                            <div class="mimo-input-panel">
-                                <div class="input-form-card">
-                                    <div class="form-header-mimo">
-                                        <img src="logo.png" alt="Mimo" class="mimo-icon-small">
-                                        <div class="form-header-text">
-                                            <div class="form-title-mimo">Detected info needed</div>
-                                            <div class="form-subtitle">Fill in the required fields</div>
+                                        
+                                        <!-- Progress Ring -->
+                                        <div class="progress-ring-container">
+                                            <svg class="progress-ring" width="120" height="120">
+                                                <circle class="progress-ring-circle-bg" cx="60" cy="60" r="52"></circle>
+                                                <circle class="progress-ring-circle" cx="60" cy="60" r="52"></circle>
+                                            </svg>
+                                            <div class="progress-percentage">75%</div>
                                         </div>
                                     </div>
-                                    
-                                <div class="input-fields-mimo">
-                                    <div class="input-field-mimo">
-                                        <label class="field-label-mimo">SKU</label>
-                                        <input type="text" class="input-box-mimo" value="WH-2023-BLK" placeholder="Enter SKU">
-                                    </div>
-                                    <div class="input-field-mimo">
-                                        <label class="field-label-mimo">New Price</label>
-                                        <div class="input-box-mimo active-input">
-                                            <span class="typing-value">$79.99</span>
-                                            <span class="typing-cursor">|</span>
-                                        </div>
-                                    </div>
-                                    <div class="input-field-mimo">
-                                        <label class="field-label-mimo">Stock Level</label>
-                                        <input type="text" class="input-box-mimo" value="145" placeholder="Enter quantity">
-                                    </div>
                                 </div>
-                                    
-                                    <button class="execute-btn-mimo">
-                                        <span class="execute-icon-mimo">▶</span>
-                                        <span>Execute</span>
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <!-- 3. Execution Log (Right) - Mimo Running -->
-                            <div class="execution-focal-card">
-                                <div class="execution-header">
-                                    <span class="execution-title">🐵 Mimo is running this workflow</span>
-                                </div>
-                                
-                                <div class="execution-checklist">
-                                    <div class="checklist-item completed">
-                                        <span class="check-icon">✓</span>
-                                        <span class="check-text">Opened Shopify product page</span>
-                                    </div>
-                                    <div class="checklist-item completed">
-                                        <span class="check-icon">✓</span>
-                                        <span class="check-text">Updated pricing to $79.99</span>
-                                    </div>
-                                    <div class="checklist-item active">
-                                        <span class="check-icon">🐵</span>
-                                        <span class="check-text">Adjusting inventory count</span>
-                                    </div>
-                                    <div class="checklist-item pending">
-                                        <span class="check-icon">○</span>
-                                        <span class="check-text">Publishing changes</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="progress-section">
-                                    <div class="progress-bar-container">
-                                        <div class="progress-bar-fill"></div>
-                                    </div>
-                                    <div class="progress-text">Updating product 47 of 156</div>
-                                </div>
-                            </div>
-                        </div>
                             </div>
                         </div>
                     </div>
@@ -695,7 +578,14 @@
             </div>
             <div class="industries-grid">
                 <div class="industry-card">
-                    <div class="industry-icon">📋</div>
+                    <div class="industry-icon-container">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="4" y="4" width="16" height="16" rx="2" stroke="#ff6b35" stroke-width="1.5"/>
+                            <line x1="8" y1="9" x2="16" y2="9" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                            <line x1="8" y1="13" x2="14" y2="13" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                            <line x1="8" y1="17" x2="12" y2="17" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3 class="industry-title">Data Entry & Admin</h3>
                     <p class="industry-description">
                         Automate tedious form filling, data transfers, and multi-step processes across any web application.
@@ -703,7 +593,12 @@
                 </div>
                 
                 <div class="industry-card">
-                    <div class="industry-icon">🛒</div>
+                    <div class="industry-icon-container">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 12c0-3.771 0-5.657 1.172-6.828C4.343 4 6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172C22 6.343 22 8.229 22 12c0 3.771 0 5.657-1.172 6.828C19.657 20 17.771 20 14 20h-4c-3.771 0-5.657 0-6.828-1.172C2 17.657 2 15.771 2 12z" stroke="#ff6b35" stroke-width="1.5"/>
+                            <path d="M10 16H6M8 12H6M17 8.5a2 2 0 11-4 0 2 2 0 014 0z" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3 class="industry-title">E-commerce</h3>
                     <p class="industry-description">
                         Update hundreds of product listings, manage inventory, and process orders across multiple platforms instantly.
@@ -711,7 +606,13 @@
                 </div>
                 
                 <div class="industry-card">
-                    <div class="industry-icon">🏥</div>
+                    <div class="industry-icon-container">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2v4M12 18v4M6 12H2M22 12h-4" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="12" cy="12" r="3" stroke="#ff6b35" stroke-width="1.5"/>
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" stroke="#ff6b35" stroke-width="1.5"/>
+                        </svg>
+                    </div>
                     <h3 class="industry-title">Healthcare</h3>
                     <p class="industry-description">
                         Navigate EHR systems, schedule appointments, and complete patient intake workflows with precision.
@@ -719,7 +620,14 @@
                 </div>
                 
                 <div class="industry-card">
-                    <div class="industry-icon">🏢</div>
+                    <div class="industry-icon-container">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="7" height="7" rx="1" stroke="#ff6b35" stroke-width="1.5"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1" stroke="#ff6b35" stroke-width="1.5"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1" stroke="#ff6b35" stroke-width="1.5"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1" stroke="#ff6b35" stroke-width="1.5"/>
+                        </svg>
+                    </div>
                     <h3 class="industry-title">Enterprise</h3>
                     <p class="industry-description">
                         Streamline CRM updates, procurement workflows, and cross-platform data synchronization at scale.
@@ -727,7 +635,12 @@
                 </div>
                 
                 <div class="industry-card">
-                    <div class="industry-icon">💼</div>
+                    <div class="industry-icon-container">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="6" width="18" height="13" rx="2" stroke="#ff6b35" stroke-width="1.5"/>
+                            <path d="M7 6V5a2 2 0 012-2h6a2 2 0 012 2v1M12 12h.01" stroke="#ff6b35" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h3 class="industry-title">Finance & Accounting</h3>
                     <p class="industry-description">
                         Process invoices, update ledgers, and handle compliance tasks without manual data entry errors.
@@ -735,7 +648,11 @@
                 </div>
                 
                 <div class="industry-card highlight-card">
-                    <div class="industry-icon">✨</div>
+                    <div class="industry-icon-container">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#ff6b35" stroke-width="1.5" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <h3 class="industry-title">...and much more!</h3>
                     <p class="industry-description">
                         Mimo.AI works with any website. If you can do it in a browser, Mimo can automate it. Try it with your workflow.

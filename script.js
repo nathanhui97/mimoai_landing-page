@@ -729,23 +729,38 @@ const initStickySteps = () => {
     
     const updateActiveVisual = () => {
         const windowHeight = window.innerHeight;
-        const scrollY = window.scrollY;
         const triggerPoint = windowHeight / 2;
         
-        let activeStepIndex = 0;
+        // Get current active index (don't default to 0!)
+        let activeStepIndex = null;
+        const currentActive = document.querySelector('.step-visual-item.active');
+        if (currentActive) {
+            activeStepIndex = Array.from(stepVisualItems).indexOf(currentActive);
+        }
+        if (activeStepIndex === -1) activeStepIndex = 0; // Only default to 0 on first load
         
-        // Find which step is currently in view
+        // Find which step's center is closest to the trigger point
+        let closestIndex = activeStepIndex !== null ? activeStepIndex : 0;
+        let closestDistance = Infinity;
+        
         stepTextItems.forEach((item, index) => {
             const rect = item.getBoundingClientRect();
             const itemCenter = rect.top + rect.height / 2;
             
-            // If the item's center is in the upper half of the viewport
-            if (itemCenter < triggerPoint && itemCenter > -rect.height) {
-                activeStepIndex = index;
+            // Only consider items that are at least partially visible
+            if (rect.bottom > 0 && rect.top < windowHeight) {
+                const distance = Math.abs(itemCenter - triggerPoint);
+                
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIndex = index;
+                }
             }
         });
         
-        // Update visual items and text items
+        activeStepIndex = closestIndex;
+        
+        // Update visual items
         stepVisualItems.forEach((visual, index) => {
             if (index === activeStepIndex) {
                 visual.classList.add('active');
@@ -754,6 +769,7 @@ const initStickySteps = () => {
             }
         });
         
+        // Update text items
         stepTextItems.forEach((item, index) => {
             if (index === activeStepIndex) {
                 item.classList.add('active');
@@ -765,6 +781,7 @@ const initStickySteps = () => {
     
     // Update on scroll
     let ticking = false;
+    
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
