@@ -5663,13 +5663,15 @@ section {
 
 .exec-label {
     font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .exec-sublabel {
     font-size: 0.875rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
 }
 
 /* Steps Checklist in Executing Phase */
@@ -10721,6 +10723,22 @@ section {
     .step-label {
         font-size: 0.75rem;
         line-height: 1.3;
+    }
+    
+    .mimo-executing-header {
+        padding: 0.875rem 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .exec-label {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: #ffffff;
+    }
+    
+    .exec-sublabel {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.9);
     }
     
     .minimal-workflow-card {
