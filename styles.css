@@ -6473,7 +6473,7 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 0 1.5rem 2.5rem;
+        padding: 0 1.5rem 3rem;
         opacity: 1 !important;
         order: 1;
     }
@@ -6491,7 +6491,7 @@ section {
     }
     
     .step-text-item:last-child {
-        padding-bottom: 1.5rem !important;
+        padding-bottom: 2rem !important;
     }
     
     .step-visual-item {
@@ -6499,14 +6499,14 @@ section {
         opacity: 1 !important;
         visibility: visible !important;
         height: auto;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
+        margin-top: 0;
+        margin-bottom: 1.25rem;
         width: 100%;
     }
     
     .step-visual-item[data-visual="1"] {
         order: 1;
-        margin-top: 0;
+        margin-top: 1rem;
     }
     
     .step-visual-item[data-visual="2"] {
@@ -8056,7 +8056,7 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 0 1rem 2rem;
+        padding: 0 1rem 2.5rem;
         opacity: 1 !important;
         width: 100%;
     }
@@ -8074,7 +8074,7 @@ section {
     }
     
     .step-text-item:last-child {
-        padding-bottom: 1.25rem !important;
+        padding-bottom: 1.5rem !important;
     }
     
     .step-visual-item {
@@ -8082,14 +8082,14 @@ section {
         opacity: 1 !important;
         visibility: visible !important;
         height: auto;
-        margin-top: 2rem;
-        margin-bottom: 0.75rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
         width: 100%;
     }
     
     .step-visual-item[data-visual="1"] {
         order: 1;
-        margin-top: 0;
+        margin-top: 0.75rem;
     }
     
     .step-visual-item[data-visual="2"] {
@@ -9082,7 +9082,7 @@ section {
     
     .step-text-item {
         width: 100%;
-        padding: 0 1rem 1.75rem;
+        padding: 0 1rem 2rem;
     }
     
     .step-text-item[data-step="1"] {
@@ -9098,17 +9098,17 @@ section {
     }
     
     .step-text-item:last-child {
-        padding-bottom: 1rem !important;
+        padding-bottom: 1.25rem !important;
     }
     
     .step-visual-item {
-        margin-top: 1.75rem;
-        margin-bottom: 0.75rem;
+        margin-top: 0;
+        margin-bottom: 0.875rem;
     }
     
     .step-visual-item[data-visual="1"] {
         order: 1;
-        margin-top: 0;
+        margin-top: 0.5rem;
     }
     
     .step-visual-item[data-visual="2"] {
