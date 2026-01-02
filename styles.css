@@ -6338,6 +6338,10 @@ section {
         order: 5;
     }
     
+    .step-text-item:last-child {
+        padding-bottom: 1rem !important;
+    }
+    
     .step-visual-item {
         position: static !important;
         opacity: 1 !important;
@@ -7894,6 +7898,10 @@ section {
         order: 5;
     }
     
+    .step-text-item:last-child {
+        padding-bottom: 0.75rem !important;
+    }
+    
     .step-visual-item {
         position: static !important;
         opacity: 1 !important;
@@ -8905,6 +8913,10 @@ section {
     
     .step-text-item[data-step="3"] {
         order: 5;
+    }
+    
+    .step-text-item:last-child {
+        padding-bottom: 0.625rem !important;
     }
     
     .step-visual-item[data-visual="1"] {
