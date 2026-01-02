@@ -6474,7 +6474,7 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 1.5rem 1.5rem 0;
+        padding: 1.5rem 1.5rem 4rem;
         opacity: 1 !important;
     }
     
@@ -8058,7 +8058,7 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 1.25rem 1rem 0;
+        padding: 1.25rem 1rem 3.5rem;
         opacity: 1 !important;
         width: 100%;
     }
@@ -9086,7 +9086,7 @@ section {
     
     .step-text-item {
         width: 100%;
-        padding: 1rem 1rem 0;
+        padding: 1rem 1rem 3.5rem;
     }
     
     .step-text-item[data-step="1"] {
