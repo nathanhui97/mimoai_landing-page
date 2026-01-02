@@ -6507,16 +6507,19 @@ section {
     .step-visual-item[data-visual="1"] {
         order: 1;
         margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
     }
     
     .step-visual-item[data-visual="2"] {
         order: 3;
         margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
     }
     
     .step-visual-item[data-visual="3"] {
         order: 5;
         margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
     }
     
     .visual-container.purple-bg,
@@ -8092,16 +8095,19 @@ section {
     .step-visual-item[data-visual="1"] {
         order: 1;
         margin-top: 3rem;
+        margin-bottom: 1.25rem;
     }
     
     .step-visual-item[data-visual="2"] {
         order: 3;
         margin-top: 3rem;
+        margin-bottom: 1.25rem;
     }
     
     .step-visual-item[data-visual="3"] {
         order: 5;
         margin-top: 3rem;
+        margin-bottom: 1.25rem;
     }
     
     .visual-container.purple-bg,
@@ -9113,16 +9119,19 @@ section {
     .step-visual-item[data-visual="1"] {
         order: 1;
         margin-top: 2.5rem;
+        margin-bottom: 1rem;
     }
     
     .step-visual-item[data-visual="2"] {
         order: 3;
         margin-top: 2.5rem;
+        margin-bottom: 1rem;
     }
     
     .step-visual-item[data-visual="3"] {
         order: 5;
         margin-top: 2.5rem;
+        margin-bottom: 1rem;
     }
     
     .step-card {
