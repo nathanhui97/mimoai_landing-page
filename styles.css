@@ -6479,15 +6479,15 @@ section {
     }
     
     .step-text-item[data-step="1"] {
-        order: 1;
+        order: 2;
     }
     
     .step-text-item[data-step="2"] {
-        order: 3;
+        order: 4;
     }
     
     .step-text-item[data-step="3"] {
-        order: 5;
+        order: 6;
     }
     
     .step-text-item:last-child {
@@ -6504,15 +6504,15 @@ section {
     }
     
     .step-visual-item[data-visual="1"] {
-        order: 2;
+        order: 1;
     }
     
     .step-visual-item[data-visual="2"] {
-        order: 4;
+        order: 3;
     }
     
     .step-visual-item[data-visual="3"] {
-        order: 6;
+        order: 5;
     }
     
     .visual-container.purple-bg,
@@ -7797,7 +7797,7 @@ section {
     }
 
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
         line-height: 1.3;
         margin-bottom: 0;
     }
@@ -8012,7 +8012,7 @@ section {
     }
     
     .section-headline {
-        font-size: 1.75rem;
+        font-size: 2.25rem;
         line-height: 1.3;
     }
     
@@ -8060,15 +8060,15 @@ section {
     }
     
     .step-text-item[data-step="1"] {
-        order: 1;
+        order: 2;
     }
     
     .step-text-item[data-step="2"] {
-        order: 3;
+        order: 4;
     }
     
     .step-text-item[data-step="3"] {
-        order: 5;
+        order: 6;
     }
     
     .step-text-item:last-child {
@@ -8085,15 +8085,15 @@ section {
     }
     
     .step-visual-item[data-visual="1"] {
-        order: 2;
+        order: 1;
     }
     
     .step-visual-item[data-visual="2"] {
-        order: 4;
+        order: 3;
     }
     
     .step-visual-item[data-visual="3"] {
-        order: 6;
+        order: 5;
     }
     
     .visual-container.purple-bg,
@@ -8209,7 +8209,7 @@ section {
     }
     
     .feature-heading {
-        font-size: 1.35rem;
+        font-size: 1.75rem;
         line-height: 1.3;
         margin-bottom: 0.75rem;
     }
@@ -8998,12 +8998,12 @@ section {
     }
     
     .hero-title {
-        font-size: 1.35rem;
+        font-size: 1.75rem;
         line-height: 1.3;
     }
     
     .hero-supporting {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         margin-top: 0.4rem;
     }
     
@@ -9043,15 +9043,15 @@ section {
     }
     
     .section-headline {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     
     .section-subline {
-        font-size: 0.875rem;
+        font-size: 0.95rem;
     }
     
     .feature-heading {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     
     .feature-description {
@@ -9082,15 +9082,15 @@ section {
     }
     
     .step-text-item[data-step="1"] {
-        order: 1;
+        order: 2;
     }
     
     .step-text-item[data-step="2"] {
-        order: 3;
+        order: 4;
     }
     
     .step-text-item[data-step="3"] {
-        order: 5;
+        order: 6;
     }
     
     .step-text-item:last-child {
@@ -9098,15 +9098,15 @@ section {
     }
     
     .step-visual-item[data-visual="1"] {
-        order: 2;
+        order: 1;
     }
     
     .step-visual-item[data-visual="2"] {
-        order: 4;
+        order: 3;
     }
     
     .step-visual-item[data-visual="3"] {
-        order: 6;
+        order: 5;
     }
     
     .step-card {
