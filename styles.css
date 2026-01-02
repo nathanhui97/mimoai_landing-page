@@ -6507,6 +6507,7 @@ section {
     .step-visual-item[data-visual="1"] {
         order: 1;
         margin-top: 1rem;
+        margin-bottom: 0.75rem;
     }
     
     .step-visual-item[data-visual="2"] {
@@ -8090,6 +8091,7 @@ section {
     .step-visual-item[data-visual="1"] {
         order: 1;
         margin-top: 0.75rem;
+        margin-bottom: 0.65rem;
     }
     
     .step-visual-item[data-visual="2"] {
@@ -9109,6 +9111,7 @@ section {
     .step-visual-item[data-visual="1"] {
         order: 1;
         margin-top: 0.5rem;
+        margin-bottom: 0.6rem;
     }
     
     .step-visual-item[data-visual="2"] {
