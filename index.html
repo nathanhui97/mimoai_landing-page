@@ -340,30 +340,47 @@
                 </p>
             </div>
             
-            <div class="steps-intro">
-                No coding. No flowcharts. Just show Mimo what to do.
-            </div>
-            
-            <!-- Step 1: Teach Mimo -->
-            <div class="step-card">
-                <div class="step-card-content">
-                    <div class="step-text-content">
+            <!-- Steps Content Wrapper -->
+            <div class="steps-wrapper">
+                <!-- Left: Scrolling Text Content -->
+                <div class="steps-text-column">
+                    <!-- Step 1 Text -->
+                    <div class="step-text-item" data-step="1">
                         <div class="step-badge-pill">STEP 1</div>
                         <h3 class="feature-heading">Just do your task once. Mimo learns by watching.</h3>
                         <p class="feature-description">
-                            Just perform your task normally in the browser. Fill forms, click buttons, navigate pages—whatever you usually do. Mimo quietly records every action while you work. No interruptions, no configuration, just do your job.
+                            Perform your task normally in the browser. Mimo quietly records every action while you work.
                         </p>
-                        <ul class="feature-benefits">
-                            <li>✓ Work naturally like you always do</li>
-                            <li>✓ Mimo records silently in the background</li>
-                            <li>✓ Works with any website or web application</li>
-                        </ul>
                     </div>
-                    <div class="step-visual-card">
-                        <div class="visual-container purple-bg square-large">
-                        <div class="recording-scene">
-                            <!-- Salesforce/CRM UI -->
-                            <div class="crm-interface">
+                    
+                    <!-- Step 2 Text -->
+                    <div class="step-text-item" data-step="2">
+                        <div class="step-badge-pill">STEP 2</div>
+                        <h3 class="feature-heading">Mimo understands the task</h3>
+                        <p class="feature-description">
+                            Mimo figures out what changes each time and what stays the same. Zero configuration needed.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 3 Text -->
+                    <div class="step-text-item" data-step="3">
+                        <div class="step-badge-pill">STEP 3</div>
+                        <h3 class="feature-heading">Tell Mimo what's new. It executes.</h3>
+                        <p class="feature-description">
+                            Provide new inputs and Mimo runs the workflow for each one. No re-recording, no manual work.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Right: Sticky Visual Container -->
+                <div class="steps-visual-column">
+                    <div class="sticky-visual-wrapper">
+                        <!-- Visual 1: Recording -->
+                        <div class="step-visual-item active" data-visual="1">
+                            <div class="visual-container purple-bg square-large">
+                                <div class="recording-scene">
+                                    <!-- Salesforce/CRM UI -->
+                                    <div class="crm-interface">
                                 <!-- Tabs -->
                                 <div class="crm-tabs">
                                     <div class="crm-tab">Leads</div>
@@ -453,30 +470,13 @@
                             </div>
                         </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Step 2: Mimo Understands the Task -->
-            <div class="step-card reverse">
-                <div class="step-card-content">
-                    <div class="step-text-content">
-                        <div class="step-badge-pill">STEP 2</div>
-                        <h3 class="feature-heading">Mimo Understands the Task</h3>
-                        <p class="feature-description">
-                            Mimo figures out what changes each time (like names or amounts) and what stays the same (navigation, buttons). Zero configuration needed — Mimo infers it all automatically.
-                        </p>
-                        <ul class="feature-benefits">
-                            <li>✓ Understands the intent behind your actions</li>
-                            <li>✓ Automatically infers what changes vs. what stays the same</li>
-                            <li>✓ No configuration needed — pure comprehension</li>
-                        </ul>
-                    </div>
-                    <div class="step-visual-card">
-                        <div class="visual-container blue-bg square-large">
-                        <div class="understanding-scene">
-                            <!-- CRM Interface (Same as Step 1, but static) -->
-                            <div class="crm-interface-static">
+                        
+                        <!-- Visual 2: Understanding -->
+                        <div class="step-visual-item" data-visual="2">
+                            <div class="visual-container blue-bg square-large">
+                                <div class="understanding-scene">
+                                    <!-- CRM Interface (Same as Step 1, but static) -->
+                                    <div class="crm-interface-static">
                                 <!-- Tabs -->
                                 <div class="crm-tabs">
                                     <div class="crm-tab">Leads</div>
@@ -550,28 +550,11 @@
                             </div>
                         </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Step 3: Mimo Executes -->
-            <div class="step-card">
-                <div class="step-card-content">
-                    <div class="step-text-content">
-                        <div class="step-badge-pill">STEP 3</div>
-                        <h3 class="feature-heading">Tell Mimo what's new. It executes.</h3>
-                        <p class="feature-description">
-                            Provide new inputs — like spreadsheet rows or updated values — and Mimo runs the workflow for each one in the browser. No re-recording. No manual work.
-                        </p>
-                        <ul class="feature-benefits">
-                            <li>✓ Input once, execute many times</li>
-                            <li>✓ Spreadsheet & column-driven</li>
-                            <li>✓ Browser work done automatically</li>
-                        </ul>
-                    </div>
-                    <div class="step-visual-card">
-                        <div class="visual-container green-bg square-large">
-                        <div class="execution-pipeline">
+                        
+                        <!-- Visual 3: Execution -->
+                        <div class="step-visual-item" data-visual="3">
+                            <div class="visual-container green-bg square-large">
+                                <div class="execution-pipeline">
                             <!-- 1. Workflow Library - User Clicks Start -->
                             <div class="workflow-card-panel">
                                 <div class="workflow-library-header">
@@ -692,6 +675,7 @@
                                 </div>
                             </div>
                         </div>
+                            </div>
                         </div>
                     </div>
                 </div>

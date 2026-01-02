@@ -720,3 +720,69 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
+// Sticky Scroll Steps Animation
+const initStickySteps = () => {
+    const stepTextItems = document.querySelectorAll('.step-text-item');
+    const stepVisualItems = document.querySelectorAll('.step-visual-item');
+    
+    if (stepTextItems.length === 0 || stepVisualItems.length === 0) return;
+    
+    const updateActiveVisual = () => {
+        const windowHeight = window.innerHeight;
+        const scrollY = window.scrollY;
+        const triggerPoint = windowHeight / 2;
+        
+        let activeStepIndex = 0;
+        
+        // Find which step is currently in view
+        stepTextItems.forEach((item, index) => {
+            const rect = item.getBoundingClientRect();
+            const itemCenter = rect.top + rect.height / 2;
+            
+            // If the item's center is in the upper half of the viewport
+            if (itemCenter < triggerPoint && itemCenter > -rect.height) {
+                activeStepIndex = index;
+            }
+        });
+        
+        // Update visual items and text items
+        stepVisualItems.forEach((visual, index) => {
+            if (index === activeStepIndex) {
+                visual.classList.add('active');
+            } else {
+                visual.classList.remove('active');
+            }
+        });
+        
+        stepTextItems.forEach((item, index) => {
+            if (index === activeStepIndex) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    };
+    
+    // Update on scroll
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateActiveVisual();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+    
+    // Initial update
+    updateActiveVisual();
+};
+
+// Initialize sticky steps after DOM load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStickySteps);
+} else {
+    initStickySteps();
+}
+
