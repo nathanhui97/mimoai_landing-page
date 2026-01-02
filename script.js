@@ -221,20 +221,39 @@ if (waitlistSignupForm) {
         submitBtn.innerHTML = 'Adding you...';
         
         try {
-            // Here you would typically send the data to your backend/email service
-            console.log('Waitlist signup:', { firstName, lastName, email, useCase });
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                throw new Error('Invalid email format');
+            }
             
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Google Forms configuration
+            const GOOGLE_FORM_ACTION_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfYQ_OMU_LasfdB8NBzEcnJvzpB7HFcrnfOeMM1MPCHUG0udg/formResponse';
+            const ENTRY_IDS = {
+                firstName: 'entry.428932020',
+                lastName: 'entry.1957585788',
+                email: 'entry.47470476',
+                useCase: 'entry.736521513'
+            };
             
-            // TODO: Replace with actual API call
-            // Example using fetch:
-            // const response = await fetch('YOUR_API_ENDPOINT', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ firstName, lastName, email, useCase })
-            // });
-            // if (!response.ok) throw new Error('Submission failed');
+            // Submit to Google Sheets via Google Forms
+            const response = await fetch(GOOGLE_FORM_ACTION_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    [ENTRY_IDS.firstName]: firstName,
+                    [ENTRY_IDS.lastName]: lastName,
+                    [ENTRY_IDS.email]: email,
+                    [ENTRY_IDS.useCase]: useCase
+                })
+            });
+            
+            // Note: 'no-cors' mode means we can't check response status
+            // We'll assume it worked if no error was thrown
+            console.log('Waitlist signup submitted to Google Sheets:', { firstName, lastName, email, useCase });
             
             // Show success message
             document.getElementById('waitlist-form-success').style.display = 'flex';
