@@ -6473,7 +6473,7 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 1.5rem 1.5rem 3.5rem;
+        padding: 1.5rem 1.5rem 0;
         opacity: 1 !important;
     }
     
@@ -6510,12 +6510,12 @@ section {
     
     .step-visual-item[data-visual="2"] {
         order: 3;
-        margin-top: 0;
+        margin-top: 3.5rem;
     }
     
     .step-visual-item[data-visual="3"] {
         order: 5;
-        margin-top: 0;
+        margin-top: 3.5rem;
     }
     
     .visual-container.purple-bg,
@@ -8057,7 +8057,7 @@ section {
     
     .step-text-item {
         min-height: auto;
-        padding: 1.25rem 1rem 3rem;
+        padding: 1.25rem 1rem 0;
         opacity: 1 !important;
         width: 100%;
     }
@@ -8095,12 +8095,12 @@ section {
     
     .step-visual-item[data-visual="2"] {
         order: 3;
-        margin-top: 0;
+        margin-top: 3rem;
     }
     
     .step-visual-item[data-visual="3"] {
         order: 5;
-        margin-top: 0;
+        margin-top: 3rem;
     }
     
     .visual-container.purple-bg,
@@ -9085,7 +9085,7 @@ section {
     
     .step-text-item {
         width: 100%;
-        padding: 1rem 1rem 2.5rem;
+        padding: 1rem 1rem 0;
     }
     
     .step-text-item[data-step="1"] {
@@ -9116,12 +9116,12 @@ section {
     
     .step-visual-item[data-visual="2"] {
         order: 3;
-        margin-top: 0;
+        margin-top: 2.5rem;
     }
     
     .step-visual-item[data-visual="3"] {
         order: 5;
-        margin-top: 0;
+        margin-top: 2.5rem;
     }
     
     .step-card {
