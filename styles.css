@@ -7790,7 +7790,7 @@ section {
 
     /* Hero Section */
     .hero {
-        padding: 5rem 0 2rem;
+        padding: 6rem 0 1.5rem;
         min-height: auto;
     }
     
@@ -9004,7 +9004,7 @@ section {
     }
     
     .hero {
-        padding: 4.5rem 0 1.5rem;
+        padding: 5.5rem 0 1rem;
     }
     
     .hero-content {
