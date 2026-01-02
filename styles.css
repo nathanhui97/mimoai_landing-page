@@ -6368,9 +6368,13 @@ section {
     .simple-recording-scene,
     .simple-understanding-scene,
     .simple-execution-scene {
-        padding: 0;
+        padding: 1.25rem;
         height: 100%;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
     }
     
     .simple-browser {
@@ -6418,20 +6422,58 @@ section {
     
     .mimo-analysis-panel {
         padding: 1.75rem 1.5rem;
-        height: 100%;
+        height: auto;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         box-sizing: border-box;
     }
     
+    .analysis-header {
+        padding-bottom: 1rem;
+    }
+    
+    .variables-section {
+        gap: 0.75rem;
+    }
+    
+    .variable-items {
+        gap: 0.5rem;
+    }
+    
     .minimal-extension-panel {
         padding: 1.75rem 1.5rem;
-        height: 100%;
+        height: auto;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         box-sizing: border-box;
+    }
+    
+    .panel-header {
+        margin-bottom: 1.25rem;
+        padding-bottom: 1rem;
+    }
+    
+    .minimal-workflow-card {
+        padding: 1rem 1.125rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .progress-ring-container {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .progress-ring {
+        width: 100px;
+        height: 100px;
     }
     
     .step-card {
@@ -9022,6 +9064,12 @@ section {
         padding: 0.875rem;
         max-width: 260px;
         margin: 0 auto;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
     }
     
     .panel-header {
@@ -9051,11 +9099,17 @@ section {
     .progress-ring-container {
         width: 60px;
         height: 60px;
+        flex-shrink: 0;
     }
     
     .progress-ring {
         width: 60px;
         height: 60px;
+    }
+    
+    .progress-ring-circle-bg,
+    .progress-ring-circle {
+        stroke-width: 5;
     }
     
     .progress-percentage {
