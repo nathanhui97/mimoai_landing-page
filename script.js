@@ -35,10 +35,10 @@ const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+    if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
     }
     
     lastScroll = currentScroll;
@@ -255,7 +255,7 @@ if (waitlistSignupForm) {
             // We'll assume it worked if no error was thrown
             console.log('Waitlist signup submitted to Google Sheets:', { firstName, lastName, email, useCase });
             
-            // Show success message
+            // Show success message in modal briefly
             document.getElementById('waitlist-form-success').style.display = 'flex';
             
             // Reset form
@@ -270,10 +270,12 @@ if (waitlistSignupForm) {
                 });
             }
             
-            // Close modal after 2 seconds
+            // Close modal and show full-screen success overlay
             setTimeout(() => {
                 closeWaitlistModal();
-            }, 2000);
+                document.getElementById('waitlist-form-success').style.display = 'none';
+                showSuccessOverlay();
+            }, 800);
             
         } catch (error) {
             console.error('Waitlist signup error:', error);
@@ -798,14 +800,18 @@ const initStickySteps = () => {
         });
     };
     
-    // Update on scroll
+    // Update on scroll with debouncing to prevent flashing
     let ticking = false;
+    let lastUpdateTime = 0;
+    const UPDATE_THROTTLE = 100; // Minimum 100ms between updates
     
     window.addEventListener('scroll', () => {
-        if (!ticking) {
+        const now = Date.now();
+        if (!ticking && (now - lastUpdateTime) >= UPDATE_THROTTLE) {
             window.requestAnimationFrame(() => {
                 updateActiveVisual();
                 ticking = false;
+                lastUpdateTime = Date.now();
             });
             ticking = true;
         }
@@ -822,3 +828,383 @@ if (document.readyState === 'loading') {
     initStickySteps();
 }
 
+// Step 3 Visual Animation: Cursor → Execute with Steps → Done
+const initStep3Animation = () => {
+    const visual3 = document.querySelector('[data-visual="3"]');
+    if (!visual3) return;
+    
+    const phases = {
+        ready: visual3.querySelector('.phase-ready'),
+        executing: visual3.querySelector('.phase-executing'),
+        done: visual3.querySelector('.phase-done')
+    };
+    
+    const miniCursor = visual3.querySelector('.mini-cursor');
+    const runButton = visual3.querySelector('.run-button-mini');
+    const panel = visual3.querySelector('.minimal-extension-panel');
+    const checklistItems = visual3.querySelectorAll('.step-check-item');
+    
+    if (!phases.ready || !miniCursor || !runButton) return;
+    
+    const animateCursorToButton = () => {
+        const panelRect = panel.getBoundingClientRect();
+        const btnRect = runButton.getBoundingClientRect();
+        
+        // Calculate button position relative to panel
+        const buttonX = btnRect.left - panelRect.left + btnRect.width / 2 - 9;
+        const buttonY = btnRect.top - panelRect.top + btnRect.height / 2 - 9;
+        
+        // Start position - top center of panel
+        const startX = panelRect.width / 2 - 9;
+        const startY = 80;
+        
+        // Position cursor at start
+        miniCursor.style.transition = 'none';
+        miniCursor.style.top = startY + 'px';
+        miniCursor.style.left = startX + 'px';
+        miniCursor.offsetHeight; // Force reflow
+        
+        // Show cursor
+        miniCursor.classList.add('visible');
+        
+        // Move to button
+        setTimeout(() => {
+            miniCursor.style.transition = 'top 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), left 0.8s cubic-bezier(0.25, 0.1, 0.25, 1)';
+            miniCursor.style.top = buttonY + 'px';
+            miniCursor.style.left = buttonX + 'px';
+        }, 200);
+        
+        // Click animation
+        setTimeout(() => {
+            miniCursor.classList.add('clicking');
+            runButton.style.transform = 'scale(0.95)';
+        }, 1100);
+        
+        setTimeout(() => {
+            miniCursor.classList.remove('clicking');
+            runButton.style.transform = '';
+        }, 1400);
+        
+        // Hide cursor
+        setTimeout(() => {
+            miniCursor.classList.remove('visible');
+        }, 1600);
+    };
+    
+    const setPhase = (phaseName) => {
+        Object.keys(phases).forEach(key => {
+            if (phases[key]) {
+                phases[key].classList.toggle('active', key === phaseName);
+            }
+        });
+    };
+    
+    const resetChecklistItems = () => {
+        checklistItems.forEach(item => {
+            item.classList.remove('active', 'completed');
+        });
+    };
+    
+    const animateChecklistItems = () => {
+        // Step 1: Read order details
+        setTimeout(() => {
+            checklistItems[0].classList.add('active');
+        }, 300);
+        
+        setTimeout(() => {
+            checklistItems[0].classList.add('completed');
+        }, 1500);
+        
+        // Step 2: Update spreadsheet
+        setTimeout(() => {
+            checklistItems[1].classList.add('active');
+        }, 1600);
+        
+        setTimeout(() => {
+            checklistItems[1].classList.add('completed');
+        }, 2800);
+        
+        // Step 3: Create shipping label
+        setTimeout(() => {
+            checklistItems[2].classList.add('active');
+        }, 2900);
+        
+        setTimeout(() => {
+            checklistItems[2].classList.add('completed');
+        }, 4100);
+    };
+    
+    const runAnimationCycle = () => {
+        // Reset checklist items
+        resetChecklistItems();
+        
+        // Phase 1: Ready to Run (0-2.5s)
+        setPhase('ready');
+        
+        // Animate cursor to button
+        setTimeout(() => {
+            animateCursorToButton();
+        }, 500);
+        
+        // Phase 2: Mimo Executing with Steps (2.5-7s)
+        setTimeout(() => {
+            setPhase('executing');
+            animateChecklistItems();
+        }, 2500);
+        
+        // Phase 3: Task Done (7-9.5s)
+        setTimeout(() => {
+            setPhase('done');
+        }, 7000);
+    };
+    
+    // Check if visual is in viewport before animating
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Start initial animation
+                runAnimationCycle();
+                
+                // Loop animation every 10 seconds
+                const interval = setInterval(() => {
+                    if (entry.isIntersecting) {
+                        runAnimationCycle();
+                    }
+                }, 10000);
+                
+                // Store interval so we can clear it if needed
+                visual3.dataset.animationInterval = interval;
+            } else {
+                // Clear interval when out of view
+                if (visual3.dataset.animationInterval) {
+                    clearInterval(visual3.dataset.animationInterval);
+                }
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+    
+    observer.observe(visual3);
+};
+
+// Initialize step 3 animation after DOM load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStep3Animation);
+} else {
+    initStep3Animation();
+}
+
+// Step 2 Visual Animation: Processing → Workflow → Understanding
+const initStep2Animation = () => {
+    const visual2 = document.querySelector('[data-visual="2"]');
+    if (!visual2) return;
+    
+    const phases = {
+        processing: visual2.querySelector('.phase-processing'),
+        workflow: visual2.querySelector('.phase-workflow'),
+        understood: visual2.querySelector('.phase-understood')
+    };
+    
+    const workflowSteps = visual2.querySelectorAll('.workflow-step');
+    const workflowArrows = visual2.querySelectorAll('.workflow-arrow');
+    
+    const setPhase = (phaseName) => {
+        Object.keys(phases).forEach(key => {
+            if (phases[key]) {
+                phases[key].classList.toggle('active', key === phaseName);
+            }
+        });
+    };
+    
+    const resetWorkflow = () => {
+        workflowSteps.forEach(step => step.classList.remove('show'));
+        workflowArrows.forEach(arrow => arrow.classList.remove('show'));
+    };
+    
+    const showWorkflowSequentially = () => {
+        // Steps and arrows appear in sequence
+        setTimeout(() => {
+            workflowSteps[0]?.classList.add('show');
+        }, 200);
+        
+        setTimeout(() => {
+            workflowArrows[0]?.classList.add('show');
+        }, 600);
+        
+        setTimeout(() => {
+            workflowSteps[1]?.classList.add('show');
+        }, 800);
+        
+        setTimeout(() => {
+            workflowArrows[1]?.classList.add('show');
+        }, 1200);
+        
+        setTimeout(() => {
+            workflowSteps[2]?.classList.add('show');
+        }, 1400);
+    };
+    
+    const runAnimationCycle = () => {
+        // Reset
+        resetWorkflow();
+        
+        // Phase 1: Processing/Thinking (0-2.5s)
+        setPhase('processing');
+        
+        // Phase 2: Workflow Map (2.5-5.5s)
+        setTimeout(() => {
+            setPhase('workflow');
+            showWorkflowSequentially();
+        }, 2500);
+        
+        // Phase 3: Understanding (5.5-9s)
+        setTimeout(() => {
+            setPhase('understood');
+        }, 5500);
+    };
+    
+    // Check if visual is in viewport before animating
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Start initial animation
+                runAnimationCycle();
+                
+                // Loop animation every 10 seconds
+                const interval = setInterval(() => {
+                    if (entry.isIntersecting) {
+                        runAnimationCycle();
+                    }
+                }, 10000);
+                
+                // Store interval so we can clear it if needed
+                visual2.dataset.animationInterval = interval;
+            } else {
+                // Clear interval when out of view
+                if (visual2.dataset.animationInterval) {
+                    clearInterval(visual2.dataset.animationInterval);
+                }
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+    
+    observer.observe(visual2);
+};
+
+// Initialize step 2 animation after DOM load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStep2Animation);
+} else {
+    initStep2Animation();
+}
+
+// Step 1 Visual Animation: Mimo Narrating Actions
+const initStep1Animation = () => {
+    const visual1 = document.querySelector('[data-visual="1"]');
+    if (!visual1) return;
+    
+    const actionCards = visual1.querySelectorAll('.action-card');
+    
+    const fadeOutAll = async () => {
+        actionCards.forEach(card => {
+            card.classList.add('fading-out');
+        });
+        await new Promise(r => setTimeout(r, 400));
+        actionCards.forEach(card => {
+            card.classList.remove('active', 'completed', 'visible', 'fading-out');
+        });
+    };
+    
+    const showAction = async (index) => {
+        const card = actionCards[index];
+        if (!card) return;
+        
+        // Make card visible and active
+        card.classList.add('visible', 'active');
+        
+        // Wait while active (highlighted)
+        await new Promise(r => setTimeout(r, 1000));
+        
+        // Keep visible but mark as completed (dim slightly)
+        card.classList.remove('active');
+        card.classList.add('completed');
+    };
+    
+    const runAnimationCycle = async () => {
+        // Fade out all cards smoothly before reset
+        await fadeOutAll();
+        
+        // Small pause
+        await new Promise(r => setTimeout(r, 200));
+        
+        // Show actions one by one, keeping previous ones visible
+        for (let i = 0; i < actionCards.length; i++) {
+            await showAction(i);
+            await new Promise(r => setTimeout(r, 300));
+        }
+        
+        // Pause with all visible before loop
+        await new Promise(r => setTimeout(r, 2000));
+    };
+    
+    // Check if visual is in viewport before animating
+    let animationRunning = false;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animationRunning) {
+                animationRunning = true;
+                
+                const runLoop = async () => {
+                    while (animationRunning) {
+                        await runAnimationCycle();
+                        await new Promise(r => setTimeout(r, 800));
+                    }
+                };
+                
+                runLoop();
+            } else if (!entry.isIntersecting) {
+                animationRunning = false;
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+    
+    observer.observe(visual1);
+};
+
+// Initialize step 1 animation after DOM load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStep1Animation);
+} else {
+    initStep1Animation();
+}
+
+
+// Success Overlay Functions
+function showSuccessOverlay() {
+    const overlay = document.getElementById('successOverlay');
+    if (overlay) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeSuccessOverlay() {
+    const overlay = document.getElementById('successOverlay');
+    if (overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close success overlay on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeSuccessOverlay();
+    }
+});
